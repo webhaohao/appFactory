@@ -50,7 +50,6 @@ a:hover{
   bottom: 0;
   left: 0;
   right: 0;
-  overflow: auto;
   margin: 0 0 0 10px;
 }
 .layout-main {
@@ -61,7 +60,6 @@ a:hover{
   left: 200px;
   width: auto;
   overflow: hidden;
-  overflow-y: auto;
   background-color: #fff;
   z-index: 998;
 }

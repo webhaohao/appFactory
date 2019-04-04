@@ -20,7 +20,7 @@
         </ul>
     </div>
     <div class="form container">
-      <form class="form-horizontal" role="form">
+      <form class="form-horizontal" role="form" id="appForm">
         <div class="form-group">
           <label class="col-sm-2 control-label">app名字</label>
           <div class="col-sm-10">
@@ -40,7 +40,7 @@
                 <div class="fileinput-new thumbnail" style="width: 200px;height: auto;max-height:150px;">
                     <img id='picImg' style="width: 100%;height: auto;max-height: 140px;" src="__PUBLIC__/images/noimage.png" alt="" />
                 </div>
-                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;" id="picWrap"></div>
                 <div>
                 <span class="btn btn-primary btn-file">
                     <span class="fileinput-new">选择文件</span>
@@ -56,10 +56,44 @@
         <div class="form-group has-error">
           <label class="col-sm-2 control-label" for="inputError"></label>
           <div class="col-sm-10">
-                <button class="btn btn-default">确认提交</button>
+                <button class="btn btn-default" id="FormSubmit">确认提交</button>
           </div>
         </div>
       </form>
     </div> 
+<script>
+      var urlencode = encodeURIComponent('http://www.happyhao.top');
+      $("#FormSubmit").on('click',function(e){
+            e.preventDefault();
+            $.ajax({
+                url:'http://api.weibo.com/2/short_url/shorten.json?source=2849184197&url_long='+urlencode,
+                type:'GET',
+                dataType:'jsonp',
+                cache:false,
+                success:function(res){
+                      console.log(res);
+                      var data = new FormData($("#appForm")[0]);
+                      data.append('url_short',res.data.urls[0].url_short);
+                      data.append('appPic',$("#picWrap img").attr('src'));
+                      $.ajax({
+                          url:'/index/Createapp/Uploadappdata',
+                          type:'post',
+                          data:data,
+                          async: false,
+                          cache: false,
+                          contentType: false,
+                          processData: false,
+                          success:function(res){
+
+                          },
+                          error:function(){
+
+                          }
+                      })
+                }
+            })
+      })
+     
+</script>    
 </body>
 </html>
