@@ -29,7 +29,7 @@
 ul,li{
     list-style:none;
 }
-a:hover{
+a:hover,a:visited,a:active,a:focus{
     text-decoration:none;
 }
 .layout-side {
@@ -67,6 +67,9 @@ a:hover{
   color: #333;
   border-bottom: 1px solid #e5e5e5;
 }
+.section .thumbnail{
+    padding:20px 0px;
+}
 .side-menu .menu-item a {
   padding: 12px 5px 12px 15px;
   display: block;
@@ -75,4 +78,10 @@ a:hover{
 }
 ul.breadcrumb li a{
   color:#33AECC;
+}
+nav.navbar{
+    margin-bottom:0px;
+}
+.section{
+    margin-top:30px;
 }

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist
+PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+       "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+ <dict>
+  <key>PayloadContent</key>
+  <array>
+   <dict>
+    <key>FullScreen</key>
+    <true/>
+    <key>Icon</key>
+    <data>iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAIAAABBat1dAAAEbElEQVR4nO3dS44bORBAQWng+1/Zs3nwkgZYThVLHbE1qvXpfuAiTfL9+/fvF/B6/Xf3G4BTiAEiBogYIGKAiAEiBogYIL8W//Z+vz/2PqYtZovrjznx4PrZ7QfXzw49+Czr79bKABEDRAwQMUDEABEDRAwQMUDEAFlNoNdO2y+6PSi9MvHdfvC0b2/baR/kyrzcygARA0QMEDFAxAARA0QMEDFA9oduC0MbBU+b71zx+b2Ut3x7z/pLsDJAxAARA0QMEDFAxAARA0QMEDFARibQz/JD9mf+kI95hZUBIgaIGCBigIgBIgaIGCBigIgBYgI9dfDwlRdd+KaLaE9jZYCIASIGiBggYoCIASIGiBggI0O3H7KH8JZrQrfd8kt51l+ClQEiBogYIGKAiAEiBogYIGKAiAGyP4H+mv2H2yfyXjnKd/HslcH20Lvdfj/PYmWAiAEiBogYIGKAiAEiBogYIGKAvJ+1S/Uo37RZmZeVAf4QA0QMEDFAxAARA0QMEDFARg4eHtoPecXn90OufX6ytv3FDr3VW7ahrn+slQEiBogYIGKAiAEiBogYIGKAiAEyMoFeu2Xiu/2KQycEbxsaJA9d1Lt40Su/6KHv1soAEQNEDBAxQMQAEQNEDBAxQFZDt1vOEv2a2yNv2bi4/WM/78rHHJrMWhkgYoCIASIGiBggYoCIASIGiBggq9s+T9theMsJuEMedPDwkAP/SKwMEDFAxAARA0QMEDFAxAARA0QMkNUE+i9PHjaf3n7RWw5CPm0evPD5YflfDf3tWRkgYoCIASIGiBggYoCIASIGyJNu+7wyHdu+tHPbs4aS207bxHuFlQEiBogYIGKAiAEiBogYIGKAiAGyf/DwD9kvunDLDPVZ22KfNZ+2MkDEABEDRAwQMUDEABEDRAwQMUBGDh6+MpX8IXfCTtw4fOXHnrYRfG3o3VoZIGKAiAEiBogYIGKAiAEiBsjIts8D5zunHXM7NLJ8kNMufX1ZGeAPMUDEABEDRAwQMUDEABEDRAyQ/W2fX+PAefnC0HnPn/+YV15x6NuzMkDEABEDRAwQMUDEABEDRAyQX4t/+5odhq/ltOVrxmpDnrWf9sr7sTJAxAARA0QMEDFAxAARA0QMEDFAVhPotdNGj9sT32dNWNcm/tPAaRP6l9s+YZoYIGKAiAEiBogYIGKAiAEiBsj+BHrhlntLP29odD00ml3/2M/vdz/whl8rA0QMEDFAxAARA0QMEDFAxAAZGbo9yy3bGrdfdOjB7Ws5tz/mlbHa0CWiVgaIGCBigIgBIgaIGCBigIgBIgaICfT3jIrXz552MPOBg38rA0QMEDFAxAARA0QMEDFAxAARA2RkAn3aCcFrQyfg3nL68sTm4Fs2K2+/qD3Q8A+IASIGiBggYoCIASIGiBgg+0O3W+5j/LyhWdWD5pK3XMu5/aK2fcI/IAaIGCBigIgBIgaIGCBigIgB8n7QKBRGWRkgYoCIASIGiBggYoCIASIGiBgg/wPhq4sP+T5aEAAAAABJRU5ErkJggg==</data>
+    <key>IsRemovable</key>
+    <true/>
+    <key>Label</key>
+    <string>demo</string>
+    <key>PayloadDescription</key>
+    <string>配置 Web Clip</string>
+    <key>PayloadDisplayName</key>
+    <string>Web Clip (demo)</string>
+    <key>PayloadIdentifier</key>
+    <string>xjyl.WebClip</string>
+    <key>PayloadOrganization</key>
+    <string>demo</string>
+    <key>PayloadType</key>
+    <string>com.apple.webClip.managed</string>
+    <key>PayloadUUID</key>
+    <string>27455A7B-B091-4818-8A7A-2EDB2EA17C4A</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>Precomposed</key>
+    <false/>
+    <key>URL</key>
+    <string>http://dy.kk521.cn/wap/</string>
+   </dict>
+  </array>
+  <key>PayloadDescription</key>
+  <string>请点击右上角的&quot;安装&quot;,这将会把&quot;demo&quot;添加到您的主屏上</string>
+  <key>PayloadDisplayName</key>
+  <string>demo安装</string>
+  <key>PayloadIdentifier</key>
+  <string>xjyl</string>
+  <key>PayloadOrganization</key>
+  <string>demo</string>
+  <key>PayloadRemovalDisallowed</key>
+  <false/>
+  <key>PayloadType</key>
+  <string>Configuration</string>
+  <key>PayloadUUID</key>
+  <string>F6BDC1D0-01E1-48E2-8059-8DFF20F02166</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+ </dict>
+</plist>

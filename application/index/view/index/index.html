@@ -5,6 +5,7 @@
   <title>IOS app生成</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/main.css"/>
 	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -17,29 +18,186 @@
 	</div>
 	<div>
 		<ul class="nav navbar-nav pull-right">
-			<li class="active"><a href="#">登录</a></li>
-			<li><a href="#">注册</a></li>
-			<!-- <li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-					Java
-					<b class="caret"></b>
-				</a>
-				<ul class="dropdown-menu">
-					<li><a href="#">jmeter</a></li>
-					<li><a href="#">EJB</a></li>
-					<li><a href="#">Jasper Report</a></li>
-					<li class="divider"></li>
-					<li><a href="#">分离的链接</a></li>
-					<li class="divider"></li>
-					<li><a href="#">另一个分离的链接</a></li>
-				</ul>
-			</li> -->
+			<li class="active"><a href="javascript:void (0);" data-toggle="modal" data-target="#loginModal">登录</a></li>
+			<li><a href="javascript:void (0);" data-toggle="modal" data-target="#regModal">注册</a></li>
 		</ul>
 	</div>
 	</div>
 </nav>
+<div class="banner">
+    <img src="__IMG__/images/banner-4.jpg" alt="" class="img-responsive"/>
+</div>
+<div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img src="__IMG__/images/tg-33.png"
+                             alt="">
+                        <div class="caption">
+                            <h3 class="text-center">在线自助操作</h3>
+                            <p>
+                                自助式操作
+                                根据自身所需配置功能，1分钟生成
+                            </p>
+                            <!--<p>-->
+                                <!--<a href="#" class="btn btn-primary" role="button">-->
+                                    <!--按钮-->
+                                <!--</a>-->
+                                <!--<a href="#" class="btn btn-default" role="button">-->
+                                    <!--按钮-->
+                                <!--</a>-->
+                            <!--</p>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img src="__IMG__/images/tg-34.png"
+                             alt="">
+                        <div class="caption">
+                            <h3 class="text-center">突破各种限制</h3>
+                            <p>
+                                不用越狱、不用企业证书
+                                不用上架appStore、即装即用
+                            </p>
+                            <!--<p>-->
+                            <!--<a href="#" class="btn btn-primary" role="button">-->
+                            <!--按钮-->
+                            <!--</a>-->
+                            <!--<a href="#" class="btn btn-default" role="button">-->
+                            <!--按钮-->
+                            <!--</a>-->
+                            <!--</p>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img src="__IMG__/images/tg-35.png"
+                             alt="">
+                        <div class="caption">
+                            <h3 class="text-center">兼容所有苹果机型</h3>
+                            <p>
+                                支持所有苹果机型
+                                完美兼容各个ios版本
+                            </p>
+                            <!--<p>-->
+                            <!--<a href="#" class="btn btn-primary" role="button">-->
+                            <!--按钮-->
+                            <!--</a>-->
+                            <!--<a href="#" class="btn btn-default" role="button">-->
+                            <!--按钮-->
+                            <!--</a>-->
+                            <!--</p>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img src="__IMG__/images/tg-36.png"
+                             alt="">
+                        <div class="caption">
+                            <h3 class="text-center">同步更新</h3>
+                            <p>
+                                H5网站内容更新后，
+                                IOS APP自动同步，无需重新打包
+                            </p>
+                            <!--<p>-->
+                            <!--<a href="#" class="btn btn-primary" role="button">-->
+                            <!--按钮-->
+                            <!--</a>-->
+                            <!--<a href="#" class="btn btn-default" role="button">-->
+                            <!--按钮-->
+                            <!--</a>-->
+                            <!--</p>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
 
 <!---注册模态框-->
-
+<div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">用户注册</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control"  placeholder="请输入您的用户名(中文、英文、数字皆可)">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="password" class="form-control"  placeholder="请输入密码，密码长度不能少于6位">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="password" class="form-control"  placeholder="请再次输入密码">
+                        </div>
+                    </div>
+                    <!--<div class="form-group">-->
+                        <!--<div class="col-sm-offset-2 col-sm-10">-->
+                            <!--<div class="checkbox">-->
+                                <!--<label>-->
+                                    <!--<input type="checkbox">请记住我-->
+                                <!--</label>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <!--<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>-->
+                <button type="button" class="btn btn-primary">注册</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<!--登陆模态框-->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="loginModalLabel">用户登录</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control"  placeholder="请输入您的用户名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="password" class="form-control"  placeholder="请输入密码">
+                        </div>
+                    </div>
+                    <!--<div class="form-group">-->
+                    <!--<div class="col-sm-offset-2 col-sm-10">-->
+                    <!--<div class="checkbox">-->
+                    <!--<label>-->
+                    <!--<input type="checkbox">请记住我-->
+                    <!--</label>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <!--<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>-->
+                <button type="button" class="btn btn-primary">登录</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
 </body>
 </html>

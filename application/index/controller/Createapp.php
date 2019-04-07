@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace app\index\controller;
 use app\index\controller\Base;
 use \DOMDocument;
@@ -7,14 +7,74 @@ class Createapp extends Base{
           return $this->fetch();
       }
       public function Uploadappdata(){
-            $this->SaveMobileConfigFile();
+            $data=[
+                'appName'=>input('appName'),
+                'url'=>input('url'),
+                'url_short'=>input('url_short'),
+                'appPic' => input('appPic')
+            ];
+            $this->SaveMobileConfigFile($data);
+            return $data;
             //return 'success';
       }
-      public function SaveMobileConfigFile(){
-             $dom = new DOMDocument('1.0','utf-8');
-             $object = $dom -> createElement('xml');
-             $dom -> appendChild($object);
-             $modi =$dom -> saveXML();
-             file_put_contents('./public/mobileconfig/tuzi0pe.mobileconfig',$modi);
+      public function SaveMobileConfigFile($data){
+             //file_put_contents($path.'tuzi0pe.mobileconfig',$modi);
+          $obj=array(
+              'PayloadContent' =>
+                array(
+                      array(
+                            "FullScreen" => true,
+                            "Icon"=>new \PlistData($data['appPic']),
+                            "IsRemovable"=>true,
+                            "Label" => $data['appName'],
+                            "PayloadDescription"=>'配置 Web Clip',
+                            "PayloadDisplayName"=>'Web Clip ('.$data['appName'].')',
+                            "PayloadIdentifier"=>'xjyl.WebClip',
+                            "PayloadOrganization"=>$data['appName'],
+                            "PayloadType" =>  'com.apple.webClip.managed',
+                            "PayloadUUID" => '27455A7B-B091-4818-8A7A-2EDB2EA17C4A',
+                            "PayloadVersion"=>1,
+                            "Precomposed"=>false,
+                            "URL" =>$data['url']
+                  )
+                ),
+               'PayloadDescription'=>'请点击右上角的"安装",这将会把"'.$data['appName'].'"添加到您的主屏上',
+               'PayloadDisplayName'=>$data['appName'].'安装',
+               'PayloadIdentifier' =>'xjyl',
+               'PayloadOrganization'=>$data['appName'],
+               'PayloadRemovalDisallowed'=>false,
+               'PayloadType'=>'Configuration',
+                'PayloadUUID'=>'F6BDC1D0-01E1-48E2-8059-8DFF20F02166',
+               'PayloadVersion'=>1
+          );
+          $res=plist_encode_xml ($obj);
+          $path='./mobileconfig/';
+          file_put_contents($path.'tuzi0pe.mobileconfig',$res);
+      }
+      public function Down()
+      {
+          if (strpos($_SERVER["HTTP_USER_AGENT"], "iPhone")) {
+              $file_name = "./mobileconfig/tuzi0pe.mobileconfig";     //下载文件名
+              $file_dir = "./";        //下载文件存放目录
+              //检查文件是否存在
+              if (!file_exists($file_dir . $file_name)) {
+                  echo "文件找不到";
+                  exit ();
+              } else {
+                  //打开文件
+                  $file = fopen($file_dir . $file_name, "r");
+                  //输入文件标签
+                  Header("Content-type: application/octet-stream");
+                  Header("Accept-Ranges: bytes");
+                  Header("Accept-Length: " . filesize($file_dir . $file_name));
+                  Header("Content-Disposition: attachment; filename=" . $file_name);
+                  //输出文件内容
+                  //读取文件内容并直接输出到浏览器
+                  echo fread($file, filesize($file_dir . $file_name));
+                  fclose($file);
+                  exit ();
+              }
+
+          }
       }
 }
