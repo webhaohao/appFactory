@@ -67,14 +67,14 @@
                     <h4 class="modal-title" id="myModalLabel">APP下载链接-请复制</h4>
                 </div>
                 <div class="modal-body">
-                      <h6>App在线安装链接：<span></span></h6>
-                      <div>
+                      <h5 class="text-center">App在线安装链接：<span></span></h5>
+                      <div class="text-center">
                             <img src="" alt="">
                       </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                    <button type="button" class="btn btn-primary">提交更改</button>
+                    <!-- <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary">提交更改</button> -->
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal -->
@@ -82,14 +82,18 @@
     <script>
         $(".appInstallLink").on('click',function(){
           var id = $(this).parent().siblings('.appId').text();
-          var uid={:session('uid')};
-          var urlencode = encodeURIComponent(window.location.protocol+"//"+window.location.host+'/index/Install?uid='+uid+'&id='+id);
+          //var uid={:session('uid')};
+          var urlencode = encodeURIComponent(window.location.protocol+"//"+window.location.host+'/index/Install?id='+id);
            $.ajax({
                 url:'http://api.weibo.com/2/short_url/shorten.json?source=2849184197&url_long='+urlencode,
                 type:'GET',
                 dataType:'jsonp',
                 cache:false,
                 success:function(res){
+                      console.log(res);
+                      var url_short=res.data.urls[0].url_short;
+                      $("#myModal .modal-body h5 span").text(url_short);
+                      $("#myModal .modal-body div img").attr('src','https://www.kuaizhan.com/common/encode-png?large=true&data='+url_short);
                       $("#myModal").modal('show');
                 },
                 error:function(res){
