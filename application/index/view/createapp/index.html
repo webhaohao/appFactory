@@ -62,7 +62,7 @@
       </form>
     </div> 
 <script>
-      var urlencode = encodeURIComponent('http://www.happyhao.top');
+      var urlencode = encodeURIComponent(window.location.protocol+"//"+window.location.host);
       $("#FormSubmit").on('click',function(e){
             e.preventDefault();
             $.ajax({
@@ -71,7 +71,7 @@
                 dataType:'jsonp',
                 cache:false,
                 success:function(res){
-                      console.log(res);
+                      //console.log(res);
                       var data = new FormData($("#appForm")[0]);
                       data.append('url_short',res.data.urls[0].url_short);
                       var result=  $("#picWrap img").attr('src');

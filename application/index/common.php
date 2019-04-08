@@ -253,3 +253,11 @@ class PlistDate
         return gmdate('Y-m-d\TH:i:s\Z', $this->dateval);
     }
 }
+// 接口 result 
+function  appResult($code,$msg){
+       return json([
+            'code' => $code,
+            'msg'  => $msg
+       ]); 
+}
+

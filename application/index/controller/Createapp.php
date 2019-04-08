@@ -2,6 +2,8 @@
 namespace app\index\controller;
 use app\index\controller\Base;
 use \DOMDocument;
+use think\Paginator;
+
 class Createapp extends Base{
       public function index(){
           return $this->fetch();
@@ -13,8 +15,13 @@ class Createapp extends Base{
                 'url_short'=>input('url_short'),
                 'appPic' => input('appPic')
             ];
-            $this->SaveMobileConfigFile($data);
-            return $data;
+            $data['filePath']=$this->SaveMobileConfigFile($data);
+            $data['userId'] = session('uid');
+            $data['time'] = time();
+            $res = db('applist')->insert($data);
+            if($res){
+                  return appResult(200,'App生成成功!');  
+            }
             //return 'success';
       }
       public function SaveMobileConfigFile($data){
@@ -48,8 +55,16 @@ class Createapp extends Base{
                'PayloadVersion'=>1
           );
           $res=plist_encode_xml ($obj);
-          $path='./mobileconfig/';
-          file_put_contents($path.'tuzi0pe.mobileconfig',$res);
+          $id = session('uid');
+          $path='./mobileconfig/'.$id.'/';
+          if(!is_dir($path)){
+              mkdir($path,0777,true);  
+          }
+          $filename = time().'.mobileconfig';
+          $fileRes=file_put_contents($path.$filename,$res);
+          if($fileRes){
+                return $path.$filename;  
+          }
       }
       public function Down()
       {
