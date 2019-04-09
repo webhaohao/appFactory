@@ -93,8 +93,21 @@
                       console.log(res);
                       var url_short=res.data.urls[0].url_short;
                       $("#myModal .modal-body h5 span").text(url_short);
-                      $("#myModal .modal-body div img").attr('src','https://www.kuaizhan.com/common/encode-png?large=true&data='+url_short);
+                      var codeUrl = 'https://www.kuaizhan.com/common/encode-png?large=true&data='+url_short
+                      $("#myModal .modal-body div img").attr('src',codeUrl);
                       $("#myModal").modal('show');
+                      $.ajax({
+                            type:'POST',
+                            url:'/index/Alist/updateAppInfo',
+                            data:{
+                                code : codeUrl,
+                                id :id
+                            },
+                            success:function(data){
+                                  console.log(data);
+                            }
+
+                      })
                 },
                 error:function(res){
 

@@ -8,4 +8,12 @@ class Alist extends Base{
           $this -> assign('list',$res); 
           return $this->fetch();
       }
+      public function updateAppInfo(){
+            $code= input('code');
+            $id = input ('id');
+            $res=db('applist') -> where('id',$id) -> setField('code',$code);
+            if($res){
+                   return appResult(200,'更新成功'); 
+            }
+      }
 }

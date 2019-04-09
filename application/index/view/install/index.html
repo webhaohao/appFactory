@@ -7,11 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 
     <!-- CSS Global Compulsory-->
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/css.css" />
-
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/style.css" />
+    <link rel="stylesheet" href="__PUBLIC__/css/css.css" />
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <!--[if lt IE 10]>
 <div class="browser_notice">
@@ -32,7 +31,23 @@
     }
   }
 </script>
+<style type="text/css">
 
+    button {
+    
+        height: 40px;
+    
+        width: 100%;
+    
+        font-size: x-large;
+    
+        margin-top: 13px;
+    
+    }
+    .btn-u { border: 0; color: #fff; font-size: 14px; cursor: pointer; font-weight: 400; padding: 6px 13px; position: relative; background: #5cb85c; display: inline-block; text-decoration: none; }
+    .btn-u:hover{background: #f60; }
+    .breadcrumbs { overflow: hidden; background: url(./images/breadcrumbs.png) no-repeat scroll top center; background-size: 100% auto; padding:15% 0 6px; border-bottom: solid 1px #eee; }
+</style>
 <!--=== Breadcrumbs ===-->
 
 <div class="row-fluid breadcrumbs margin-bottom-20">
@@ -53,60 +68,26 @@
 
 </div><!--/breadcrumbs-->
 
-
-
-<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-
-
-
-<style type="text/css">
-
-button {
-
-	height: 40px;
-
-	width: 100%;
-
-	font-size: x-large;
-
-	margin-top: 13px;
-
-}pt>
-
-</style>
-<style>
-.btn-u { border: 0; color: #fff; font-size: 14px; cursor: pointer; font-weight: 400; padding: 6px 13px; position: relative; background: #5cb85c; display: inline-block; text-decoration: none; }
-.btn-u:hover{background: #f60; }
-.breadcrumbs { overflow: hidden; background: url(./images/breadcrumbs.png) no-repeat scroll top center; background-size: 100% auto; padding:15% 0 6px; border-bottom: solid 1px #eee; }
-</style>
-
 <div id="" class="view row" style="margin-top:30px;">    
 
-	    <div class="span12 margin-bottom-20" style="text-align:center;">
-
-             
-
-        <img src="{'data:image/png;base64,'.$ls.appPic}" class="img-rounded" width="119" height="118" />
-	       
-
+	    <div class="col-md-12 margin-bottom-20" style="text-align:center;">
+        <img src="__UPLOAD__/{$ls.file}" class="img-rounded" width="119" height="118" />
+	    
 	        <div class="spinner" style="padding-top:20px;">
 
 	        <div id="showtext"></div>
 
 	        <div class="loading"></div>
 
-	            <span id="checkinfo">
-
-		            
-               
-                       <a href="app.html" class="btn-u btn-u-lg" style="border-radius: 50px;"><i class="fa fa-download"></i> 安装苹果APP</a>
+	            <span id="checkinfo">		            
+                       <a href="/index/Install/down?id={$ls.id}" class="btn-u btn-u-lg" style="border-radius: 50px;"><i class="fa fa-download"></i> 安装苹果APP</a>
 	            </span>
 
 	        </div>
 
 	    </div>
 
-	    <div class="span12" style="text-align:center;padding-top:20px;">
+	    <div class="col-md-12 text-center" style="padding-top:20px;">
 
 	<!---->
 
@@ -132,48 +113,42 @@ button {
 
         <div class="span12" style="text-align:center;">或者用手机扫描下面的二维码安装<br><br>
 
-            <img src="picture/b7a9870436fd0e053ca1c9fefeee1523.png" width="222" height="222" />
+            <img src="{$ls.code}" width="222" height="222" />
+
+        </div>
+
+    </div>
+    <div id="weixin" style="display: none">
+
+        <div class="click_opacity"></div>
+
+        <div class="to_btn">
+
+            <span class="span1"><img src="picture/click_btn.png"></span>
+
+            <span class="span2"><em>1</em> 点击右上角<img src="picture/menu.png">打开菜单</span>
+
+            <span class="span2"><em>2</em> 选择<img src="picture/safari.png">用Safari打开下载</span>
 
         </div>
 
     </div>
 
-<!---->
+    <div id="weixin_an" style="display: none">
 
+        <div class="click_opacity"></div>
 
-<link href="css/app_1.css" rel="stylesheet" type="text/css">
+        <div class="to_btn">
 
-<div id="weixin" style="display: none">
+            <span class="span1"><img src="picture/click_btn.png"></span>
 
-    <div class="click_opacity"></div>
+            <span class="span2"><em>1</em> 点击右上角<img src="picture/menu_android.png">打开菜单</span>
 
-    <div class="to_btn">
+            <span class="span2 android_open"><em>2</em> 选择<img src="picture/android.png"></span>
 
-        <span class="span1"><img src="picture/click_btn.png"></span>
-
-        <span class="span2"><em>1</em> 点击右上角<img src="picture/menu.png">打开菜单</span>
-
-        <span class="span2"><em>2</em> 选择<img src="picture/safari.png">用Safari打开下载</span>
+        </div>
 
     </div>
-
-</div>
-
-<div id="weixin_an" style="display: none">
-
-    <div class="click_opacity"></div>
-
-    <div class="to_btn">
-
-        <span class="span1"><img src="picture/click_btn.png"></span>
-
-        <span class="span2"><em>1</em> 点击右上角<img src="picture/menu_android.png">打开菜单</span>
-
-        <span class="span2 android_open"><em>2</em> 选择<img src="picture/android.png"></span>
-
-    </div>
-
-</div>
 
 <script src="js/slick.min.js"></script>
 
@@ -494,8 +469,8 @@ button {
 <div class="copyright">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8  col-xs-12 col-md-6 col-sm-6 text-left">
-				页面由 <a href="">无二APP</a> 提供
+            <div class="col-lg-12  col-xs-12 col-md-12 col-sm-12 text-center">
+				页面由 <a href="">IOS工厂</a> 提供
             </div>
         </div><!--/row-fluid-->
     </div><!--/container-->

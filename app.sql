@@ -9,14 +9,15 @@ create table user(
     status int,
     time  int
 );
-insert into user values(NULL,'haohao','123456',NULL,NULL);
-create table appList(
+create table applist(
    id int primary key auto_increment,
    appName varchar(30),
    url varchar(100),
    url_short varchar(100),
    appPic text,
+   file varchar(100),  
    userId int,
-   filePath varchar(100),
+   xmlPath varchar(100),
+   code varchar(200),
    time int
 )

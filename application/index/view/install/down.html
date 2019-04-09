@@ -5,7 +5,7 @@
 	<meta content="yes" name="apple-mobile-web-app-capable">
 	<meta content="yes" name="apple-touch-fullscreen">
 	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,maximum-scale=1, minimum-scale=1, user-scalable=no">
-
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 	<title>兔子影视-IOS程序安装</title>
 </head>
 
@@ -30,9 +30,23 @@
   if (useragent.match(/MicroMessenger/i) == 'MicroMessenger') window.location.href = "tishi.html";
 </script>
     <img src="__IMG__/images/2.jpg" alt="" width="100%" /></a>
-    <a href="down.php"><img src="__IMG__/images/1.jpg" alt="" width="100%" /></a>
+    <a href="javascript:;" id="downBtn"><img src="__IMG__/images/1.jpg" alt="" width="100%" /></a>
     <p style="text-align: center;"><img src="__IMG__/images/jc.png?s=v1.2" alt="" width="90%"></p>
     <div style="text-align:center;">
     </div>
 </body>
+<script>
+      $(function(){
+        function getQueryString(name){
+            var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if(r!=null)return  unescape(r[2]); return null;
+        }
+        $("#downBtn").on('click',function(){
+              $id = getQueryString('id');
+              console.log($id);
+              window.location.href='/index/Install/downLoad?id='+$id;
+        })
+      })
+</script>
 </html>

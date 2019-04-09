@@ -1,7 +1,6 @@
 <?php
 namespace app\index\controller;
 use app\index\controller\Base;
-use \DOMDocument;
 use think\Paginator;
 
 class Createapp extends Base{
@@ -15,14 +14,27 @@ class Createapp extends Base{
                 'url_short'=>input('url_short'),
                 'appPic' => input('appPic')
             ];
-            $data['filePath']=$this->SaveMobileConfigFile($data);
+            $data['xmlPath']=$this->SaveMobileConfigFile($data);
             $data['userId'] = session('uid');
             $data['time'] = time();
+            $data['file']=$this->uploadPic();
             $res = db('applist')->insert($data);
             if($res){
                   return appResult(200,'App生成成功!');  
             }
             //return 'success';
+      }
+      public function uploadPic(){
+            $file=request()->file('pic');
+            if($file){
+                    $info = $file ->move(ROOT_PATH.'public'.DS.'uploads');
+                    if($info){
+                        return $info->getSaveName();
+                    }
+                    else{
+                        return $file->getError();
+                    }
+            }
       }
       public function SaveMobileConfigFile($data){
              //file_put_contents($path.'tuzi0pe.mobileconfig',$modi);
@@ -51,7 +63,7 @@ class Createapp extends Base{
                'PayloadOrganization'=>$data['appName'],
                'PayloadRemovalDisallowed'=>false,
                'PayloadType'=>'Configuration',
-                'PayloadUUID'=>'F6BDC1D0-01E1-48E2-8059-8DFF20F02166',
+               'PayloadUUID'=>'F6BDC1D0-01E1-48E2-8059-8DFF20F02166',
                'PayloadVersion'=>1
           );
           $res=plist_encode_xml ($obj);
@@ -61,6 +73,8 @@ class Createapp extends Base{
               mkdir($path,0777,true);  
           }
           $filename = time().'.mobileconfig';
+        //   var_dump(file_put_contents($path.$filename,$res));
+        //   die;
           $fileRes=file_put_contents($path.$filename,$res);
           if($fileRes){
                 return $path.$filename;  
