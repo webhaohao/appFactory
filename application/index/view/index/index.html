@@ -4,10 +4,13 @@
 	<meta charset="utf-8">
   <title>IOS app生成</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
     <link rel="stylesheet" href="__PUBLIC__/css/main.css"/>
 	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="__PUBLIC__/js/common.js"></script>
 </head>
 <body>
 
@@ -205,18 +208,68 @@
              $("#regBtn").on('click',regFun);   
              //用户登录
              $("#loginBtn").on('click',loginFun);
+        
+             $('#regForm input[name=uname]').blur(checkUname);
+             $('#regForm input[name=upwd]').blur(checkPwd);
+             $('#regForm input[name=upwd2]').blur(checkPwd2)
        }) 
+       //用户名验证
+       function checkUname(){
+            var uname = $.trim($("#regForm input[name=uname]").val());
+            if(!uname){
+                toastr.error('用户不能为空!');
+                return false;
+            }
+            else if(uname.length>10){
+               toastr.error('用户不能超过10位字符!');
+               return false;     
+            }
+            else{
+                return true;
+            }
+       }
+       function checkPwd(){
+           var pwd = $.trim($("#regForm input[name=upwd]").val());
+           if(!pwd){
+               toastr.error('密码不能为空!'); 
+           }
+           else{
+               return true;
+           }
+       }
+       function checkPwd2(){
+            var pwd = $.trim($("#regForm input[name=upwd]").val());
+            var pwd2 = $.trim($("#regForm input[name=upwd2]").val());
+            if(pwd !== pwd2){
+                toastr.error('两次输入密码不一致!');
+                return false;
+            }
+            else{
+                return true;
+            }
+       }
        function regFun(){
-            var data=$("#regForm").serialize();
-            console.log(data);
-            $.ajax({
-                url:'/index/index/Reg',
-                type:'POST',
-                data:data,
-                success:function(data){
-                    
-                }
-            })
+            //toastr.info('Are you the 6 fingered man?')
+            if(checkUname()&&checkPwd()&&checkPwd2()){
+                var data=$("#regForm").serialize();
+                $.ajax({
+                    url:'/index/index/Reg',
+                    type:'POST',
+                    data:data,
+                    success:function(data){
+                            if(data.code==200){
+                                toastr.info(data.msg);
+                                setTimeout(function(){
+                                    location.href='/index/Main';
+                                },1000);  
+                               
+                            }
+                            else{
+                                toastr.error(data.msg);
+                            }                 
+                    }
+                })
+            }
        }
        function loginFun(){
            var data=$("#loginForm").serialize();
@@ -226,7 +279,11 @@
                data:data,
                success:function(data){
                     if(data.code==200){
+                            //toastr.info(data.msg);
                             location.href='/index/Main';
+                    }
+                    else{
+                            toastr.error(data.msg);
                     }
                }
            })

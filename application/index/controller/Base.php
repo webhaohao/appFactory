@@ -3,7 +3,9 @@ namespace app\index\controller;
 use think\Controller;
 class Base extends Controller
 {
-      public function index(){
-            return 'base';
+     public function _initialize(){
+      if(!session('uname')&&!session('uid')){
+            $this->error('请先登录系统！','index/index');
       }
+  }
 }

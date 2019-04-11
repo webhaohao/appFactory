@@ -1,7 +1,8 @@
 <?php 
 namespace app\index\controller;
-use app\index\controller\Base;
-class Index extends Base{
+use think\Controller;
+
+class Index extends Controller{
       public function index(){
           return $this->fetch();
       }
@@ -17,9 +18,15 @@ class Index extends Base{
               "upwd" => md5(input('upwd')),
               "time" => time()  
         ];
-        $res =  db('user')->insert($data);
-        $res ? $result=appResult(200,'注册成功！') : $result=appResult(500,'注册失败！');
-        return $result;
+        $res=db('user')->insertGetId($data);
+        if($res){
+            session('uid',$res)&&session('uname',$data['uname']);
+            return appResult(200,'注册成功！');
+        }
+        else{
+            return appResult(500,'注册失败！');
+        }
+        //return $result;
       }
 
       public function Login(){

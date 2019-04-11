@@ -1,20 +1,23 @@
 <?php 
 namespace app\index\controller;
-use app\index\controller\Base;
-class Install extends Base{
+use think\Controller;
+class Install extends Controller{
       public function index(){
-            $id =input('id');
-            $res=db('applist')->where('id',$id)->find();
+            $uuid =input('uuid');
+            $res=db('applist')->where('uuid',$uuid)->find();
             $this->assign('ls',$res);
             return $this -> fetch();
             //print_r($res);
+      }
+      public function Notice(){
+            return $this ->fetch();
       }
       public function down(){
           return $this -> fetch();
       }
       public function downLoad(){
-          $id = input('id');
-          $res = db('applist')->where('id',$id)->find();
+          $uuid = input('uuid');
+          $res = db('applist')->where('uuid',$uuid)->find();
           //if(strpos($_SERVER["HTTP_USER_AGENT"],"iPhone")) {
               $file_name = $res['xmlPath'];    //下载文件名    
               //$file_dir = "./";        //下载文件存放目录    

@@ -11,18 +11,18 @@
 
 <body>
 <script type="text/javascript">
-  // var system = {};
-  // var p = navigator.platform;
-  // var u = navigator.userAgent;
-  // system.win = p.indexOf("Win") == 0;
-  // system.mac = p.indexOf("Mac") == 0;
-  // system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
-  // if (system.win || system.mac || system.xll) {//
-  //   if (u.indexOf('Windows Phone') > -1) {  //
-  //   }else {
-  //     window.location.href = "tishi.html";
-  //   }
-  // }
+    var system = {};
+    var p = navigator.platform;
+    var u = navigator.userAgent;
+    system.win = p.indexOf("Win") == 0;
+    system.mac = p.indexOf("Mac") == 0;
+    system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+    if (system.win || system.mac || system.xll) {
+      if (u.indexOf('Windows Phone') > -1) { 
+      }else {
+           window.location.href = "/index/Install/Notice";
+      }
+    }
 </script>
 <script type="text/javascript">
   // 对浏览器的UserAgent进行正则匹配，不含有微信独有标识的则为其他浏览器
@@ -43,9 +43,8 @@
             if(r!=null)return  unescape(r[2]); return null;
         }
         $("#downBtn").on('click',function(){
-              $id = getQueryString('id');
-              console.log($id);
-              window.location.href='/index/Install/downLoad?id='+$id;
+              $uuid = getQueryString('uuid');
+              window.location.href='/index/Install/downLoad?uuid='+$uuid;
         })
       })
 </script>

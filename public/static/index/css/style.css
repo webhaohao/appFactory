@@ -2539,7 +2539,7 @@ header .container {
     color: #1abc9c;
 }
 .breadcrumbs{
-    border-top:2px solid #eee;
+    /* border-top:2px solid #eee; */
 }
 
 .back-333{ background:#333;}

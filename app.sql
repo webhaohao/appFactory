@@ -19,5 +19,6 @@ create table applist(
    userId int,
    xmlPath varchar(100),
    code varchar(200),
+   uuid varchar(60),
    time int
 )

@@ -52,7 +52,7 @@
                 <td>{$vo.appName}</td>
                 <td>{$vo.url_short}</td>
                 <td>
-                    <button class="btn btn-sm btn-success appInstallLink">app安装链接</button>  
+                    <button class="btn btn-sm btn-success appInstallLink" data-uuid="{$vo.uuid}">app安装链接</button>  
                 </td>
             </tr>
           {/volist}
@@ -83,7 +83,9 @@
         $(".appInstallLink").on('click',function(){
           var id = $(this).parent().siblings('.appId').text();
           //var uid={:session('uid')};
-          var urlencode = encodeURIComponent(window.location.protocol+"//"+window.location.host+'/index/Install?id='+id);
+          //获取唯一标识的uuid
+          var uuid = $(this).attr('data-uuid');
+          var urlencode = encodeURIComponent(window.location.protocol+"//"+window.location.host+'/index/Install?uuid='+uuid);
            $.ajax({
                 url:'http://api.weibo.com/2/short_url/shorten.json?source=2849184197&url_long='+urlencode,
                 type:'GET',

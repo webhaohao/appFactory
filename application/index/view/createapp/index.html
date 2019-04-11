@@ -8,10 +8,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="__PUBLIC__/css/bootstrap-fileinput.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
   <link rel="stylesheet" href="__PUBLIC__/css/main.css">
 	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="__PUBLIC__/js/bootstrap-fileinput.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+  <script src="__PUBLIC__/js/common.js"></script>
 </head>
 <body>
     <div class="">
@@ -24,7 +27,7 @@
         <div class="form-group">
           <label class="col-sm-2 control-label">app名字</label>
           <div class="col-sm-10">
-            <input class="form-control" id="focusedInput" type="text" value="" placeholder="要生成的app名称" name="appName">
+            <input class="form-control" id="focusedInput" type="text" value="" placeholder="app名称不能超过8个字符" name="appName">
           </div>
         </div>
         <div class="form-group has-success">
@@ -61,10 +64,23 @@
         </div>
       </form>
     </div> 
+<style>
+       .toast-center-center {
+          top: 50%;
+            left: 50%;
+            margin-top: -25px;
+            margin-left: -150px;
+        }
+</style>    
 <script>
+      toastr.options.positionClass = 'toast-center-center';
       var urlencode = encodeURIComponent(window.location.protocol+"//"+window.location.host);
+      $("input[name=appName]").blur(checkAppName);
+      $("input[name=url]").blur(checkUrl);
       $("#FormSubmit").on('click',function(e){
             e.preventDefault();
+            //debugger;
+            if(!(checkAppName()&&checkIsupload()&&checkUrl()))return false;
             $.ajax({
                 url:'http://api.weibo.com/2/short_url/shorten.json?source=2849184197&url_long='+urlencode,
                 type:'GET',
@@ -86,7 +102,12 @@
                           contentType: false,
                           processData: false,
                           success:function(res){
-
+                              if(res.code == 200){
+                                  toastr.info(res.msg);
+                                  setTimeout(function(){
+                                        location.href='/index/Alist';
+                                  },500)
+                              }
                           },
                           error:function(){
 
@@ -95,7 +116,46 @@
                 }
             })
       })
-     
+      function checkAppName(){
+            var appName=$.trim($("input[name=appName]").val());
+             if(!appName){
+                  toastr.error('App名字不能为空！');
+                  return false;
+             }
+             else if(appName.length>8){
+                  toastr.error('App名字不能超过8个字符');
+                  return false;
+             } 
+             else{
+                return true;
+             }
+      } 
+      function checkUrl(){
+            var url = $.trim($("input[name=url]").val());
+            //判断是否是正确的http网址
+            var reg=/^([hH][tT]{2}[pP]:\/\/|[hH][tT]{2}[pP][sS]:\/\/)(([A-Za-z0-9-~]+)\.)+([A-Za-z0-9-~\/])+$/;
+            if(!url){
+                toastr.error('http或https url地址不能为空！');
+                return false;
+            }
+            else if(!reg.test(url)){
+                toastr.error('输入网址不是以http://https://开头，或者不是网址！');
+                return false;
+            }
+            else{
+                return true;
+            }
+      }
+      function checkIsupload(){
+            var file = $.trim($("input[name=pic]").val());
+            if(!file){
+                toastr.error('请上传图片!');
+                return false;  
+            }
+            else{
+                return true;
+            }
+      }
 </script>    
 </body>
 </html>

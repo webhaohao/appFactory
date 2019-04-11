@@ -5,4 +5,8 @@
         public function index(){
             return $this->fetch();
         }
+        public function LoginOut(){
+            session(null);
+            $this->success('退出成功！','index/index');
+        }
   }
