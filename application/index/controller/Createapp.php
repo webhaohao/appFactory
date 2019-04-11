@@ -14,9 +14,9 @@ class Createapp extends Base{
                 'url_short'=>input('url_short'),
                 'appPic' => input('appPic')
             ];
-            $data['xmlPath']=$this->SaveMobileConfigFile($data,$UUID);
-            $data['userId'] = session('uid');
             $UUID=$this->createGuid();
+            $data['userId'] = session('uid');
+            $data['xmlPath']=$this->SaveMobileConfigFile($data,$UUID);
             $data['uuid'] =$UUID;
             $data['time'] = time();
             $data['file']=$this->uploadPic();
@@ -73,8 +73,7 @@ class Createapp extends Base{
                //6C641E06-497B-4EA6-A85F-erh1TCfTWSIS36lC
           );
           $res=plist_encode_xml ($obj);
-          $id = session('uid');
-          $path='./mobileconfig/'.$id.'/';
+          $path='./mobileconfig/'.$data['userId'].'/';
           if(!is_dir($path)){
               mkdir($path,0777,true);  
           }

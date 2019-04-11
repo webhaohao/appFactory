@@ -21,4 +21,11 @@ create table applist(
    code varchar(200),
    uuid varchar(60),
    time int
+);
+
+Create table orderList(
+    id varchar(50) primary key,
+    pid int,
+    time int,
+    status int   #status 0 未付款  1 已付款   
 )

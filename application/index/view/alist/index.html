@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="__PUBLIC__/css/main.css">
 	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -52,7 +52,8 @@
                 <td>{$vo.appName}</td>
                 <td>{$vo.url_short}</td>
                 <td>
-                    <button class="btn btn-sm btn-success appInstallLink" data-uuid="{$vo.uuid}">app安装链接</button>  
+                    <button class="btn btn-sm btn-success appInstallLink" data-uuid="{$vo.uuid}">app安装链接</button>
+                    <button class="btn btn-sm btn-info appaActivate" data-uuid="{$vo.uuid}">app激活</button>  
                 </td>
             </tr>
           {/volist}
@@ -115,8 +116,11 @@
 
                 }
             })
-        })
-          
+           })
+        $(".appaActivate").on('click',function(){
+                var uuid = $(this).attr('data-uuid');
+                window.location.href='/index/Pay?uuid='+uuid; 
+        })  
     </script>
 </body>
 </html>

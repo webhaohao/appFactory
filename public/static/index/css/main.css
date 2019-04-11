@@ -26,6 +26,40 @@
 .tab-nav-content a.active{color: #33AECC;background: #fff;}
 .tab-nav-content a i{color:#ccc;font-size:12px;vertical-align:top;}
 .tab-nav-content a.active i:hover{color: #FF5722;}
+/* .btn:focus,
+
+.btn:active:focus,
+
+.btn.active:focus,
+
+.btn.focus,
+
+.btn:active.focus,
+
+.btn.active.focus {
+
+outline: none;
+
+} */
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active:focus,
+.btn.active:focus {
+    
+}
+/* input{
+  outline: none !important;
+  border:none !important; 
+  margin:0;         
+} */
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+    outline: none;
+    border: none;
+}
 ul,li{
     list-style:none;
 }
@@ -84,4 +118,21 @@ nav.navbar{
 }
 .section{
     margin-top:30px;
+}
+.item .caption img{
+    margin-right:10px;
+}
+.item .price{
+    font-size:20px;
+    color:#3369ff;
+}
+.item .y_price{
+    font-size:15px;
+    text-decoration:line-through;
+}
+.item .thumbnail.active{
+      border:1px solid #3369ff;
+}
+.item .thumbnail:hover{
+      cursor: pointer;
 }
