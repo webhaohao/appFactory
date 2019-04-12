@@ -10,19 +10,33 @@
         }
 
         public function OrderAdd(){
-              $data=[
-                  'id' => $this->createGuid(),
-                  'pid'=>1,
-                  'time'=>time()  
-              ];  
-             
-              
               //建立请求
+              require_once $_SERVER["DOCUMENT_ROOT"].'/lib/epay_submit.class.php';
               $alipay_config= $this->epayConfig();
-              //require_once("../lib/epay_submit.class.php");
+             /**************************请求参数**************************/
+              $notify_url = "http://xxx.xxx/notify_url.php";
+              //需http://格式的完整路径，不能加?id=123这类自定义参数
+      
+              //页面跳转同步通知页面路径
+              $return_url = "http://xxx.xxx/return_url.php";
+              //需http://格式的完整路径，不能加?id=123这类自定义参数，不能写成http://localhost/
+      
+              //商户订单号
+              $out_trade_no =$this->createGuid();
+              // echo $_SERVER["DOCUMENT_ROOT"]; 
+              $data=[
+                  'pid' => trim($alipay_config['partner']),
+                  "type" =>'alipay',
+                  "out_trade_no"	=> $out_trade_no,
+                  "return_url"	=> $return_url,
+	              	"notify_url"	=> $notify_url,
+                  "name"	=>input("proName"),
+                  "money"	=> 0.01,
+                  "sitename"	=> 'IOS工厂'
+              ];  
               $alipaySubmit = new \AlipaySubmit($alipay_config);
-              $html_text = $alipaySubmit->buildRequestForm($parameter);
-              //var_dump($alipaySubmit);
+              $html_text = $alipaySubmit->buildRequestForm($data);
+              return  $html_text;
         }
         public function epayConfig(){
                       /* *
