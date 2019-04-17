@@ -23,9 +23,11 @@ create table applist(
    time int
 );
 
-Create table orderList(
+Create table orderlist(
     id varchar(50) primary key,
-    pid int,
+    type varchar(20), #支付方式
+    proName varchar(100), #商品名称
+    totalPrice varchar(10), #订单总价
     time int,
     status int   #status 0 未付款  1 已付款   
 )

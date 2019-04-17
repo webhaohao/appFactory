@@ -5,7 +5,7 @@ class Base extends Controller
 {
      public function _initialize(){
       if(!session('uname')&&!session('uid')){
-            $this->error('请先登录系统！','index/index');
+            $this->error('请先登录系统！','/index/index');
       }
   }
 }

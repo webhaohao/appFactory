@@ -71,19 +71,19 @@
             <label class="col-sm-2 control-label">选择支付方式</label>
             <div class="col-sm-10">
                   <div class="row">
-                      <div class="col-md-2">
+                      <!-- <div class="col-md-2">
                             <div class="radio radio-danger">
                                   <input type="radio" name="type" value="wxpay" checked id="weixin">
                                   <label for="weixin">微信支付</label>
                             </div>
-                      </div>      
+                      </div>       -->
                       <div class="col-md-2"> 
                           <div class="radio radio-danger">
-                            <input type="radio" name="type" value="alipay" id="zhifubao">
+                            <input type="radio" name="type" value="alipay" id="zhifubao" checked>
                             <label for="zhifubao">支付宝</label>
                           </div>
                       </div>
-                      <div class="col-md-2">
+                      <!-- <div class="col-md-2">
                           <div class="radio radio-danger">
                               <input type="radio" name="type" value="qqpay" id="QQ">
                               <label for="QQ">QQ钱包</label>
@@ -94,7 +94,7 @@
                               <input type="radio" name="type" value="tenpay" id="caifutong">
                               <label for="caifutong">财付通</label>
                           </div>
-                      </div>
+                      </div> -->
                   </div>
             </div>
       </div>
@@ -127,6 +127,8 @@
                                 $("body").append(data);
                                 $("#alipaysubmit").attr('target','_blank')
                                 $("#alipaysubmit").submit();
+                              
+
                             },
                             error:function(){
 
