@@ -33,37 +33,18 @@
               <label class="col-sm-2 control-label">选择套餐</label>
               <div class="col-sm-10">
                 <div class="row">
+                    {volist name="prolist" id="vo" key="k"}
                   <div class="col-sm-6 col-md-6">
-                      <div class="thumbnail active">
+                      <!--默认给第一个子元素加active-->
+                      <div class="thumbnail {$k==1?'active':''}">
                           <div class="caption">
-                              <h4><img src="__PUBLIC__/images/icon.png"/>生成IOS app(1年续期)</h4>
-                              <p class="price">￥119</p>
-                              <p class="y_price">￥149</p>
+                              <h4><img src="__PUBLIC__/images/icon.png"/>{$vo.proName}</h4>
+                              <p class="price">{$vo.price}</p>
+                              <p class="y_price">{$vo.y_price}</p>
                           </div>
                       </div>
                   </div>
-                  <div class="col-sm-6 col-md-6">
-                      <div class="thumbnail">
-                          <div class="caption">
-                              <h4><img src="__PUBLIC__/images/icon.png"/>生成IOS app(永久)</h4>
-                              <p class="price">
-                                ￥149
-                              </p>
-                              <p class="y_price">￥179</p>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-sm-6 col-md-6">
-                      <div class="thumbnail">
-                          <div class="caption">
-                              <h4><img src="__PUBLIC__/images/icon.png"/>生成IOS app(1天)</h4>
-                              <p class="price">
-                                ￥1
-                              </p>
-                              <p class="y_price">￥179</p>
-                          </div>
-                      </div>
-                  </div>
+                  {/volist}
                 </div>
               </div>
         </div>

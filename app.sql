@@ -20,14 +20,26 @@ create table applist(
    xmlPath varchar(100),
    code varchar(200),
    uuid varchar(60),
+   status int, # 0为失效 , 1为激活状态 
+   deadline int, #过期时间
    time int
 );
-
-Create table orderlist(
+create table prolist(
+   id int primary key auto_increment,
+   proName varchar(50), #商品名称
+   price varchar(10), #商品价格
+   y_price varchar(10),#商品原价
+   time int  
+);
+insert into prolist values(null,'生成IOS app(1年续期)','119.00','149.00',''),
+                          (null,'生成IOS app(永久)','149.00','179.00',''),
+                          (null,'生成IOS app(1天)','1.00','5.00','');
+create table orderlist(
     id varchar(50) primary key,
     type varchar(20), #支付方式
     proName varchar(100), #商品名称
     totalPrice varchar(10), #订单总价
     time int,
-    status int   #status 0 未付款  1 已付款   
+    status int,   #status 0 未付款  1 已付款  
+    userId  int   #用户id     
 )
