@@ -254,10 +254,11 @@ class PlistDate
     }
 }
 // 接口 result 
-function  appResult($code,$msg){
+function  appResult($code,$msg,$data=''){
        return json([
             'code' => $code,
-            'msg'  => $msg
+            'msg'  => $msg,
+            'data' => $data
        ]); 
 }
 

@@ -16,4 +16,15 @@ class Alist extends Base{
                    return appResult(200,'更新成功'); 
             }
       }
+      public function selectAppInfoByAppId(){
+            $appid = input('appid');
+            $res = db('applist')->where('id',$appid)->find();
+            if($res){
+                  $data =[
+                       'status' =>$res['status'],
+                       'deadline'=>$res['deadline']       
+                  ];
+                  return appResult(200,'',$data);
+            }
+      }
 }

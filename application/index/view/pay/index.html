@@ -23,6 +23,7 @@
       <form class="form-horizontal" role="form" id="orderForm">
         <input type="hidden" name="price" value="">
         <input type="hidden" name="proName" value="">
+        <input type="hidden" name="appId" value="{$ls.id}">
         <div class="form-group">
           <label class="col-sm-2 control-label">激活APP名称</label>
           <div class="col-sm-10">
@@ -39,8 +40,8 @@
                       <div class="thumbnail {$k==1?'active':''}">
                           <div class="caption">
                               <h4><img src="__PUBLIC__/images/icon.png"/>{$vo.proName}</h4>
-                              <p class="price">{$vo.price}</p>
-                              <p class="y_price">{$vo.y_price}</p>
+                              <p class="price">¥{$vo.price}</p>
+                              <p class="y_price">¥{$vo.y_price}</p>
                           </div>
                       </div>
                   </div>

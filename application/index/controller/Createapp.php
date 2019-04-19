@@ -20,6 +20,7 @@ class Createapp extends Base{
             $data['uuid'] =$UUID;
             $data['time'] = time();
             $data['file']=$this->uploadPic();
+            $data['status'] = 1;
             $res = db('applist')->insert($data);
             if($res){
                   return appResult(200,'App生成成功!');  

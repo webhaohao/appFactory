@@ -40,9 +40,24 @@ class Payreturn extends Controller
                    if(input('trade_status')=='TRADE_SUCCESS'){
                         //判断订单状态  0为未付款 1为已付款
                         //根据订单号查询预订单详情,请求支付参数是否与数据库预订单是否一致
-                        db('orderlist')->where('id',input('out_trade_no'))->update(['status'=>1]);
+                        $res=db('orderlist')->where('id',input('out_trade_no'))->find();
+                        if($res){
+                            db('orderlist')->where('id',input('out_trade_no'))->update(['status'=>1]);
+                            $prodata=db('prolist')->where('proName',$res['proName'])->find();
+                            if(strops($prodata['proName'],'永久')){
+                                    $deadline = strtotime('+100year');
+                            }
+                            else if(strops($prodata['proName'],'1年')) {
+                                    $deadline = strtotime('+1year');
+                            } 
+                            else{
+                                    $deadline=strtotime('+1day');
+                            }
+                            db('applist')->where('id',$res['appId'])->setField('deadline',$deadline);
+                        }
+                      
                    } 
-                echo "success";	  
+                   echo "success";	  
             }
             else{
                 //验证失败

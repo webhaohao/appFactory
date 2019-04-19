@@ -37,7 +37,7 @@ class Pay extends Base{
                     'proName'=>input("proName"),
                     'totalPrice'=>0.01,
                     'time' => time(),
-                    'userId'=>session('uid'),
+                    'appId'=>input('appId'),
                     'status' => 0
               ];
               $res=db('orderlist')->insert($orderData);
@@ -49,7 +49,7 @@ class Pay extends Base{
                         "return_url"	=> $return_url,
                         "notify_url"	=> $notify_url,
                         "name"	=>input("proName"),
-                        "money"	=> 0.01,
+                        "money"	=>input("price"),
                         "sitename"	=> 'IOS工厂'
                     ];  
                     $alipaySubmit = new \AlipaySubmit($alipay_config);

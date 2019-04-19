@@ -7,9 +7,12 @@
   <title>Document</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
   <link rel="stylesheet" href="__PUBLIC__/css/main.css">
 	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+  <script src="__PUBLIC__/js/common.js"></script>
 </head>
 <body>
     <div class="">
@@ -83,6 +86,22 @@
     <script>
         $(".appInstallLink").on('click',function(){
           var id = $(this).parent().siblings('.appId').text();
+          //通过appid 查询当前app的状态
+          $.ajax({
+                url:'/index/Alist/selectAppInfoByAppId',
+                data:{
+                     appid:id
+                },
+                success:function(data){
+                    var data=data.data;
+                    if(data.deadline == null){
+                        if(data.status==1 ){
+                            toastr.error('App尚未激活,只能体验一次!');
+                        }
+                    }
+                   
+                }
+          })
           //var uid={:session('uid')};
           //获取唯一标识的uuid
           var uuid = $(this).attr('data-uuid');

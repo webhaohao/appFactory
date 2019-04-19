@@ -31,9 +31,9 @@ create table prolist(
    y_price varchar(10),#商品原价
    time int  
 );
-insert into prolist values(null,'生成IOS app(1年续期)','119.00','149.00',''),
-                          (null,'生成IOS app(永久)','149.00','179.00',''),
-                          (null,'生成IOS app(1天)','1.00','5.00','');
+insert into prolist values(null,'生成IOS app(1年续期)','119.00','149.00',null),
+                          (null,'生成IOS app(永久)','149.00','179.00',null),
+                          (null,'生成IOS app(1天)','1.00','5.00',null);
 create table orderlist(
     id varchar(50) primary key,
     type varchar(20), #支付方式
@@ -41,5 +41,5 @@ create table orderlist(
     totalPrice varchar(10), #订单总价
     time int,
     status int,   #status 0 未付款  1 已付款  
-    userId  int   #用户id     
+    appId  int   #appid     
 )
