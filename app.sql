@@ -42,4 +42,11 @@ create table orderlist(
     time int,
     status int,   #status 0 未付款  1 已付款  
     appId  int   #appid     
-)
+);
+
+create table admin(
+    id int primary key auto_increment,
+    username varchar(20),
+    password varchar(100)    
+);
+insert into admin values(null,'appFactory','1a5e52a77e8c62a74190a5040c5ce97e');

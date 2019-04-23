@@ -35,7 +35,7 @@ class Pay extends Base{
                     'id' =>$out_trade_no,
                     'type'=>'alipay',
                     'proName'=>input("proName"),
-                    'totalPrice'=>0.01,
+                    'totalPrice'=>input("price"),
                     'time' => time(),
                     'appId'=>input('appId'),
                     'status' => 0

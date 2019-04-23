@@ -21,6 +21,8 @@ class Createapp extends Base{
             $data['time'] = time();
             $data['file']=$this->uploadPic();
             $data['status'] = 1;
+            //第一次建立app,默认时间为当前时间
+            $data['deadline']=time();
             $res = db('applist')->insert($data);
             if($res){
                   return appResult(200,'App生成成功!');  
