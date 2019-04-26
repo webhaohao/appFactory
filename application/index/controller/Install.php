@@ -9,7 +9,8 @@ class Install extends Controller{
             return $this -> fetch();
             //print_r($res);
       }
-      public function Notice(){
+      public function Notice($msg="请在苹果手机自带浏览器(Safari)打开链接"){
+            $this->assign('msg',$msg);
             return $this ->fetch();
       }
       public function down(){
@@ -18,9 +19,11 @@ class Install extends Controller{
       public function downLoad(){
           $uuid = input('uuid');
           $res = db('applist')->where('uuid',$uuid)->find();
-          if(!$res['deadline']&&$res['status']==0){
-                echo 'app链接已失效！';
-                die;
+          if($res['deadline']<=time()){
+                if($res['status']==0){
+                    $this->assign('msg','app已失效或者已过期!');
+                    return $this->fetch('notice');
+                } 
           }
           if(strpos($_SERVER["HTTP_USER_AGENT"],"iPhone")) {
               $file_name = $res['xmlPath'];    //下载文件名    

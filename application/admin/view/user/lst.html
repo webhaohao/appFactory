@@ -44,7 +44,7 @@
                                         <li>
                         <a href="#">系统</a>
                     </li>
-                                        <li class="active">栏目管理</li>
+                                        <li class="active">用户管理</li>
                                         </ul>
                 </div>
                 <!-- /Page Breadcrumb -->
@@ -52,8 +52,8 @@
                 <!-- Page Body -->
                 <div class="page-body">
                     
-<button type="button" tooltip="添加栏目" class="btn btn-sm btn-azure btn-addon" onClick="javascript:window.location.href = '{:url('cate/add')}'"> <i class="fa fa-plus"></i> Add
-</button>
+<!-- <button type="button" tooltip="添加链接" class="btn btn-sm btn-azure btn-addon" onClick="javascript:window.location.href = '{:url('links/add')}'"> <i class="fa fa-plus"></i> Add
+</button> -->
 <div class="row">
     <div class="col-lg-12 col-sm-12 col-xs-12">
         <div class="widget">
@@ -63,20 +63,22 @@
                         <thead class="">
                             <tr>
                                 <th class="text-center" width="4%">ID</th>
-                                <th class="text-center">栏目名称</th>
-                                <th class="text-center" width="14%">操作</th>
+                                <th class="text-center">用户名</th>
+                                <th class="text-center">注册时间</th>
+                                <th class="text-center" width="20%">操作</th>
                             </tr>
                         </thead>
                         <tbody>
                             {volist name="list" id="vo"}
                             <tr>
-                                <td align="center">{$vo.id}</td>
-                                <td align="center">{$vo.catename}</td>
+                                <td align="center">{$vo.uid}</td>
+                                <td align="center">{$vo.uname}</td>
+                                <td align="center">{$vo.time|date="Y-m-d H:i:s",###}</td>
                                 <td align="center">
-                                    <a href="{:url('cate/edit',array('id'=>$vo['id']))}" class="btn btn-primary btn-sm shiny">
+                                    <a href="{:url('user/edit',array('id'=>$vo['uid']))}" class="btn btn-primary btn-sm shiny">
                                         <i class="fa fa-edit"></i> 编辑
                                     </a>
-                                    <a href="#" onClick="warning('确实要删除吗', '{:url('cate/del',array('id'=>$vo['id']))}')" class="btn btn-danger btn-sm shiny">
+                                    <a href="#" onClick="warning('确实要删除吗', '{:url('user/del',array('id'=>$vo['uid']))}')" class="btn btn-danger btn-sm shiny">
                                         <i class="fa fa-trash-o"></i> 删除
                                     </a>
                                 </td>

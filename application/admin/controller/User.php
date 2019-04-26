@@ -1,12 +1,12 @@
 <?php
-namespace app\Admin\controller;
-use app\Admin\model\Links as LinksModel;
+namespace app\admin\controller;
+use app\admin\model\User as UserModel;
 use app\admin\controller\Base;
-class Links extends Base
+class User extends Base
 {
     public function lst()
     {
-    	$list = LinksModel::paginate(3);
+    	$list = UserModel::paginate(10);
     	$this->assign('list',$list);
         return $this->fetch();
     }

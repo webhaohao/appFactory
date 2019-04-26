@@ -20,11 +20,28 @@ class Alist extends Base{
             $appid = input('appid');
             $res = db('applist')->where('id',$appid)->find();
             if($res){
-                  $data =[
-                       'status' =>$res['status'],
-                       'deadline'=>$res['deadline']       
-                  ];
-                  return appResult(200,'',$data);
+                  if($res['deadline']<=time()){
+                        if($res['status']== 0){
+                              $data=['msg'=>'App尚未激活'];
+                        }
+                        else{
+                              $data=[
+                                    'msg'=>'App尚未激活,只能体验一次!'
+                              ];         
+                        }
+                        return appResult(500,'',$data);
+                  }
+                  else{
+                        $data=[
+                              'msg'=>'已激活'
+                        ];      
+                        return appResult(200,'',$data);     
+                  }
+                  // $data =[
+                  //      'status' =>$res['status'],
+                  //      'deadline'=>$res['deadline']       
+                  // ];
+                 
             }
       }
 }

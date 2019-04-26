@@ -93,13 +93,9 @@
                      appid:id
                 },
                 success:function(data){
-                    var data=data.data;
-                    if(data.deadline == null){
-                        if(data.status==1 ){
-                            toastr.error('App尚未激活,只能体验一次!');
-                        }
-                    }
-                   
+                    if(data.code==500){
+                            toastr.error(data.data.msg);
+                    } 
                 }
           })
           //var uid={:session('uid')};

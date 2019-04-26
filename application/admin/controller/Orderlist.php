@@ -1,14 +1,14 @@
 <?php
-namespace app\Admin\controller;
-use app\Admin\model\Article as ArticleModel;
+namespace app\admin\controller;
+use app\admin\model\Orderlist as OrderModel;
 use app\admin\controller\Base;
-class Article extends Base
+class Orderlist extends Base
 {
     public function lst()
     {
     	// $list = ArticleModel::paginate(3);
         // $list=db('article')->alias('a')->join('cate c','c.id=a.cateid')->field('a.id,a.title,a.pic,a.author,a.state,c.catename')->paginate(3);
-        $list = ArticleModel::paginate(3);
+        $list = OrderModel::paginate(10);
     	$this->assign('list',$list);
         return $this->fetch();
     }

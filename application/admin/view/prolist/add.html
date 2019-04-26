@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-        <meta charset="utf-8">
+	    <meta charset="utf-8">
     <title>appFactory</title>
 
     <meta name="description" content="Dashboard">
@@ -20,14 +20,14 @@
     
 </head>
 <body>
-    <!-- 头部 -->
-    {include file="common/top"}
+	<!-- 头部 -->
+	{include file="common/top"}
 
-    <!-- /头部 -->
-    
-    <div class="main-container container-fluid">
-        <div class="page-container">
-                        <!-- Page Sidebar -->
+	<!-- /头部 -->
+	
+	<div class="main-container container-fluid">
+		<div class="page-container">
+			            <!-- Page Sidebar -->
             {include file="common/left"}
             <!-- /Page Sidebar -->
             <!-- Page Content -->
@@ -39,9 +39,9 @@
                         <a href="#">系统</a>
                     </li>
                                         <li>
-                        <a href="{:url('cate/lst')}">栏目管理</a>
+                        <a href="{:url('admin/lst')}">产品管理</a>
                     </li>
-                                        <li class="active">修改栏目</li>
+                                        <li class="active">添加产品</li>
                                         </ul>
                 </div>
                 <!-- /Page Breadcrumb -->
@@ -53,16 +53,29 @@
     <div class="col-lg-12 col-sm-12 col-xs-12">
         <div class="widget">
             <div class="widget-header bordered-bottom bordered-blue">
-                <span class="widget-caption">修改栏目</span>
+                <span class="widget-caption">新增产品</span>
             </div>
             <div class="widget-body">
                 <div id="horizontal-form">
                     <form class="form-horizontal" role="form" action="" method="post">
-                        <input type="hidden" name="id" value="{$cates.id}">
                         <div class="form-group">
-                            <label for="username" class="col-sm-2 control-label no-padding-right">栏目名</label>
+                            <label for="username" class="col-sm-2 control-label no-padding-right">产品名</label>
                             <div class="col-sm-6">
-                                <input class="form-control" id="catename" placeholder="" name="catename" value="{$cates.catename}"  type="text">
+                                <input class="form-control" id="catename" placeholder="" name="proName"  type="text">
+                            </div>
+                            <p class="help-block col-sm-4 red">* 必填</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="username" class="col-sm-2 control-label no-padding-right">产品原价格</label>
+                            <div class="col-sm-6">
+                                <input class="form-control" id="catename" placeholder="" name="y_price"  type="text">
+                            </div>
+                            <p class="help-block col-sm-4 red">* 必填</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="username" class="col-sm-2 control-label no-padding-right">产品价格</label>
+                            <div class="col-sm-6">
+                                <input class="form-control" id="catename" placeholder="" name="price"  type="text">
                             </div>
                             <p class="help-block col-sm-4 red">* 必填</p>
                         </div>
@@ -82,10 +95,10 @@
                 <!-- /Page Body -->
             </div>
             <!-- /Page Content -->
-        </div>  
-    </div>
+		</div>	
+	</div>
 
-        <!--Basic Scripts-->
+	    <!--Basic Scripts-->
     <script src="__PUBLIC__/style/jquery_002.js"></script>
     <script src="__PUBLIC__/style/bootstrap.js"></script>
     <script src="__PUBLIC__/style/jquery.js"></script>
