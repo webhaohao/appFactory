@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist
+PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+       "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+ <dict>
+  <key>PayloadContent</key>
+  <array>
+   <dict>
+    <key>FullScreen</key>
+    <true/>
+    <key>Icon</key>
+    <data>iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAIAAABBat1dAAAD4ElEQVR4nO3dO44bMRBAQcnw/a+8DvzgwAlnMTTdkqrixc4PDwzUIJ9fX18P4PH48b9vAKYQA0QMEDFAxAARA0QMEDFAxAARA+Tn8i+ez+eB+xhiOZxy5m2cmZHxZf9iZYCIASIGiBggYoCIASIGiBggYoCIAbIex1h6of01hgxTvMocxKd9WSsDRAwQMUDEABEDRAwQMUDEABEDRAyQDeMYS0OGIOZc5YXGHJbe6eNaGSBigIgBIgaIGCBigIgBIgaIGCBigIgBcmI26Z0MGcW5chvvNAF1hpUBIgaIGCBigIgBIgaIGCBigIgBIgaIcYz93ubknk9jZYCIASIGiBggYoCIASIGiBggYoCIAXJiHMM2DdvNeaVz7uQ+KwNEDBAxQMQAEQNEDBAxQMQAEQNEDBAxQDbMJtn45LwzJ/d82pe1MkDEABEDRAwQMUDEABEDRAwQMUDEAHm+01YfQyynGO4f7eOr/QtWBogYIGKAiAEiBogYIGKAiAEiBogYICdO7rnizADCmavcn7YY4sx9Xnnn9+/kylWsDBAxQMQAEQNEDBAxQMQAEQNEDBAxQMQAWc8mHdj4ZAuH2XzXlmc5s2nNmatYGSBigIgBIgaIGCBigIgBIgaIGCBigGw4ueeFdnkZMkwxZCrkzBzNnK+/ZGWAiAEiBogYIGKAiAEiBogYIGKAiAGy4eSeM7+3b/kP9wcQzmzTMGRs5Iw5D2tlgIgBIgaIGCBigIgBIgaIGCBigIgBMuWwko8ac7h/G0NGYK7cyZCjaq68MSsDRAwQMUDEABEDRAwQMUDEABEDRAwQMUA2nNzzUYZMN73QMUVLc472sTJAxAARA0QMEDFAxAARA0QMEDFAxADZsFXMO1n+aH9mDmLI/itbHnbIs1xhZYCIASIGiBggYoCIASIGiBggYoCIAbIex1h6of01hkwxDDm5Z2nOkUtnWBkgYoCIASIGiBggYoCIASIGiBggYoCIAbJhNmlpyETQHPeHl+Y87P1bPXNyzxVWBogYIGKAiAEiBogYIGKAiAEiBogYICfGMd7Jlt1T7s8OzDnt5r45z2JlgIgBIgaIGCBigIgBIgaIGCBigIgBYhzje65s5XBgvmDO7hhLW97GgQmXh5UB/hADRAwQMUDEABEDRAwQMUDEABEDRAyQE7NJLzRIM8SZUZw5R+bct+VZrAwQMUDEABEDRAwQMUDEABEDRAwQMUA2jGMM+UH+o5yZpLhylfuTI1t23zGOATuJASIGiBggYoCIASIGiBggYoCIAfK0dQX8ZmWAiAEiBogYIGKAiAEiBogYIGKAiAEiBsgvNj/pGVFj4KkAAAAASUVORK5CYII=</data>
+    <key>IsRemovable</key>
+    <true/>
+    <key>Label</key>
+    <string>demo</string>
+    <key>PayloadDescription</key>
+    <string>配置 Web Clip</string>
+    <key>PayloadDisplayName</key>
+    <string>Web Clip (demo)</string>
+    <key>PayloadIdentifier</key>
+    <string>xjyl11555119730WebClip</string>
+    <key>PayloadOrganization</key>
+    <string>demo</string>
+    <key>PayloadType</key>
+    <string>com.apple.webClip.managed</string>
+    <key>PayloadUUID</key>
+    <string>C27A82F6_F074_BD35_8E09EDBA9846</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>Precomposed</key>
+    <false/>
+    <key>URL</key>
+    <string>http://dy.kk521.cn/wap/</string>
+   </dict>
+  </array>
+  <key>PayloadDescription</key>
+  <string>请点击右上角的&quot;安装&quot;,这将会把&quot;demo&quot;添加到您的主屏上</string>
+  <key>PayloadDisplayName</key>
+  <string>demo安装</string>
+  <key>PayloadIdentifier</key>
+  <string>xjyl11555119730</string>
+  <key>PayloadOrganization</key>
+  <string>demo</string>
+  <key>PayloadRemovalDisallowed</key>
+  <false/>
+  <key>PayloadType</key>
+  <string>Configuration</string>
+  <key>PayloadUUID</key>
+  <string>C27A82F6_F074_BD35_8E09EDBA9846</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+ </dict>
+</plist>

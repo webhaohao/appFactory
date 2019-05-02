@@ -77,7 +77,7 @@ class AlipaySubmit {
      * @param $button_name 确认按钮显示文字
      * @return 提交表单HTML文本
      */
-	function buildRequestForm($para_temp, $method='POST', $button_name='正在跳转') {
+	function buildRequestForm($para_temp, $method='GET', $button_name='正在跳转') {
 		//待请求参数数组
 		$para = $this->buildRequestPara($para_temp);
 		
