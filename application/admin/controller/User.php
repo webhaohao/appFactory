@@ -36,7 +36,7 @@ class User extends Base
 
     public function edit(){
     	$id=input('id');
-    	$Links=db('Links')->find($id);
+    	$user=db('user')->find($id);
     	if(request()->isPost()){
     		$data=[
     			'id'=>input('id'),
@@ -44,18 +44,18 @@ class User extends Base
                 'url'=>input('url'),
     			'desc'=>input('desc'),
     		];
-			$validate = \think\Loader::validate('Links');
+			$validate = \think\Loader::validate('user');
     		if(!$validate->scene('edit')->check($data)){
 			   $this->error($validate->getError()); die;
 			}
     		if(db('Links')->update($data)){
-    			$this->success('修改链接成功！','lst');
+    			$this->success('修改用户成功！','lst');
     		}else{
-    			$this->error('修改链接失败！');
+    			$this->error('修改用户失败！');
     		}
     		return;
     	}
-    	$this->assign('Links',$Links);
+    	$this->assign('user',$user);
     	return $this->fetch();
     }
 

@@ -5,11 +5,13 @@
   <title>IOS app生成</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
     <link rel="stylesheet" href="__PUBLIC__/css/main.css"/>
 	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
     <script src="__PUBLIC__/js/common.js"></script>
 </head>
 <body>
@@ -21,14 +23,24 @@
 	</div>
 	<div>
 		<ul class="nav navbar-nav pull-right">
-			<li class="active"><a href="javascript:void (0);" data-toggle="modal" data-target="#loginModal">登录</a></li>
-			<li><a href="javascript:void (0);" data-toggle="modal" data-target="#regModal">注册</a></li>
+            {if condition="$Request.session.uname"}
+            <li><a href="javascript:void (0);">欢迎您,{$Request.session.uname}</a></li>
+            {else /}
+            <li class="active"><a href="javascript:void (0);" data-toggle="modal" data-target="#loginModal">登录</a></li>
+            <li><a href="javascript:void (0);" data-toggle="modal" data-target="#regModal">注册</a></li>
+            {/if}
 		</ul>
 	</div>
 	</div>
 </nav>
 <div class="banner">
-    <img src="__IMG__/images/banner-4.jpg" alt="" class="img-responsive"/>
+        <div class="swiper-container">
+               <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                           <a href="" style="background:url(__IMG__/images/index-banner-1.jpg)"></a> 
+                    </div>
+               </div> 
+        </div>
 </div>
 <div class="section">
         <div class="container">

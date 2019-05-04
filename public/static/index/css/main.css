@@ -136,3 +136,8 @@ nav.navbar{
 .item .thumbnail:hover{
       cursor: pointer;
 }
+.banner .swiper-slide>a {
+  display: block;
+  height: 430px;
+  width: 100%;
+}

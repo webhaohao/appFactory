@@ -39,7 +39,7 @@
                         <a href="#">系统</a>
                     </li>
                                         <li>
-                        <a href="{:url('links/lst')}">链接管理</a>
+                        <a href="{:url('user/lst')}">链接管理</a>
                     </li>
                                         <li class="active">修改链接</li>
                                         </ul>
@@ -58,7 +58,7 @@
             <div class="widget-body">
                 <div id="horizontal-form">
                     <form class="form-horizontal" role="form" action="" method="post">
-                        <input type="hidden" name="id" value="{$Links.id}">
+                        <input type="hidden" name="id" value="{$user.id}">
                         <div class="form-group">
                             <label for="username" class="col-sm-2 control-label no-padding-right">链接标题</label>
                             <div class="col-sm-6">
@@ -74,12 +74,6 @@
                             </div>
                             <p class="help-block col-sm-4 red">* 必填</p>
                         </div>  
-                        <div class="form-group">
-                            <label for="group_id" class="col-sm-2 control-label no-padding-right">链接描述</label>
-                            <div class="col-sm-6">
-                                <textarea name="desc" class="form-control">{$Links.desc}</textarea>
-                            </div>
-                        </div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <button type="submit" class="btn btn-default">保存信息</button>
