@@ -13,23 +13,27 @@
   <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
   <script src="__PUBLIC__/js/common.js"></script>
+  <style>
+    span.label{
+          font-size:13px;
+    }
+  </style>
 </head>
 <body>
     <div class="">
         <ul class="breadcrumb">
-          <li><a href="javascript:;">APP管理-列表</a></li>
+          <li><a href="javascript:;">我的订单-列表</a></li>
         </ul>
-    </div>
-    <div class="createApp">
-          <a href="/index/Createapp" class="ms-btn ms-btn-primary">创建App</a>
     </div>
     <table class="table">
       <thead>
         <tr>
-          <th>ID</th>
-          <th>App名称</th>
-          <th>h5地址(已转短链接)</th>
-          <th>操作</th>
+          <th>购买产品</th>
+          <th>激活App名称</th>
+          <th>订单总价</th>
+          <th>订单状态</th>
+          <th>订单时间</th>
+          <!-- <th></th> -->
         </tr>
       </thead>
       <tbody>
@@ -51,13 +55,15 @@
           <td>已退货</td></tr> -->
          {volist name="list" id="vo"}
             <tr class="active">
-                <td class="appId">{$vo.id}</td>
+                <td class="appId">{$vo.proName}</td>
                 <td>{$vo.appName}</td>
-                <td>{$vo.url_short}</td>
-                <td>
+                <td>¥{$vo.totalPrice}</td>
+                <td>{$vo.status?'<span class="label label-success">已付款</span>':'<span class="label label-danger">未付款</span>'}</td>
+                <td>{$vo.time|date="Y-m-d H:i:s",###}</td>
+                <!-- <td>
                     <button class="btn btn-sm btn-success appInstallLink" data-uuid="{$vo.uuid}">app安装链接</button>
                     <button class="btn btn-sm btn-info appaActivate" data-uuid="{$vo.uuid}">app激活</button>  
-                </td>
+                </td> -->
             </tr>
           {/volist}
       </tbody>
