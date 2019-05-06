@@ -359,11 +359,11 @@ footer .copy-right {
 .main_nav{
   border-bottom:1px solid #00b589;
 }
-.main_nav .icon-msg{
+.icon-msg{
   font-size: 20px;
   color: #00b589;
 }
-.main_nav .notification{
+z .notification{
   position: relative;
   cursor: pointer;
   margin-right: 15px;
@@ -396,8 +396,8 @@ footer .copy-right {
 .login-user dl dd a {
   color: #666;
 }
-.main_nav  .notification .ms-badge {
-  left: -7px;
+.notification .ms-badge {
+  left: -9px;
 }
 .ms-badge {
   background-color: #f4242e;

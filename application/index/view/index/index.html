@@ -19,21 +19,47 @@
 
 <nav role="navigation">
 	<div class="container">
-	<div class="navbar-header">
-		<a class="logo" href="#">
-                <img src="__IMG__/images/logo.png">
-        </a>
-	</div>
-	<div class="userHandle">
-		<ul class="pull-right">
-            {if condition="$Request.session.uname"}
-            <li><a href="javascript:void (0);">欢迎您,{$Request.session.uname}</a></li>
-            {else /}
-            <li class="active"><a href="javascript:void (0);" data-toggle="modal" data-target="#loginModal" class="ms-btn ms-btn-default">登录</a></li>
-            <li><a href="javascript:void (0);" data-toggle="modal" data-target="#regModal" class="ms-btn ms-btn-primary">注册</a></li>
-            {/if}
-		</ul>
-	</div>
+    <div class="login-nav">
+            <div class="navbar-header">
+                <a class="logo" href="#">
+                        <img src="__IMG__/images/logo.png">
+                </a>
+            </div>
+            <div class="userHandle">
+                {if condition="$Request.session.uname"}
+                    <div class="login-in">
+                            <!-- <li><a href="javascript:void (0);">欢迎您,{$Request.session.uname}</a></li> -->
+                                <div class="notification fl">
+                                            <span class="iconfont icon-msg"></span>
+                                            <span class="ms-badge">1</span>
+                                </div>
+                                <div class="login-user clear fl">
+                                            <span class="fl">
+                                                    {$Request.session.uname}
+                                            </span>
+                                            <span class="iconfont icon-arrow-bottom fl hidden-xs">
+                                            </span>
+                                            <div class="user-wrap">
+                                                        <dl>
+                                                                <!-- <dd>
+                                                                        <a href="">我的订单</a>	
+                                                                </dd> -->
+                                                                <dd>
+                                                                        <a href="/index/Main/loginOut">退出</a>	
+                                                                </dd>
+                                                        </dl>
+                                            </div>
+                                </div>
+                    </div>
+                
+                {else /}
+                    <ul class="pull-right">
+                            <li class="active"><a href="javascript:void (0);" data-toggle="modal" data-target="#loginModal" class="ms-btn ms-btn-default">登录</a></li>
+                            <li><a href="javascript:void (0);" data-toggle="modal" data-target="#regModal" class="ms-btn ms-btn-primary">注册</a></li>
+                    </ul>
+                {/if}
+            </div>
+    </div>
 	</div>
 </nav>
 <div class="banner">
