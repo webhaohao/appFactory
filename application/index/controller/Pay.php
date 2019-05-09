@@ -31,20 +31,31 @@ class Pay extends Base{
               //需http://格式的完整路径，不能加?id=123这类自定义参数，不能写成http://localhost/
               //商户订单号
               $out_trade_no =$this->createGuid();
-              // echo $_SERVER["DOCUMENT_ROOT"]; 
-              $data=[
-                  'pid' => trim($alipay_config['partner']),
-                  "type" =>'alipay',
-                  "out_trade_no"	=> $out_trade_no,
-                  "return_url"	=> $return_url,
-	              	"notify_url"	=> $notify_url,
-                  "name"	=>input("proName"),
-                  "money"	=> 0.01,
-                  "sitename"	=> 'IOS工厂'
-              ];  
-              $alipaySubmit = new \AlipaySubmit($alipay_config);
-              $html_text = $alipaySubmit->buildRequestForm($data);
-              return  $html_text;
+              $orderData = [
+                    'id' =>$out_trade_no,
+                    'type'=>'alipay',
+                    'proName'=>input("proName"),
+                    'totalPrice'=>input("price"),
+                    'time' => time(),
+                    'appId'=>input('appId'),
+                    'status' => 0
+              ];
+              $res=db('orderlist')->insert($orderData);
+              if($res){
+                    $data=[
+                        'pid' => trim($alipay_config['partner']),
+                        "type" =>'alipay',
+                        "out_trade_no"	=> $out_trade_no,
+                        "return_url"	=> $return_url,
+                        "notify_url"	=> $notify_url,
+                        "name"	=>input("proName"),
+                        "money"	=>input("price"),
+                        "sitename"	=> 'IOS工厂'
+                    ];  
+                    $alipaySubmit = new \AlipaySubmit($alipay_config);
+                    $html_text = $alipaySubmit->buildRequestForm($data);
+                    return  $html_text;
+              }
         }
         public function epayConfig(){
                       /* *
