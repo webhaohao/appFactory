@@ -53,7 +53,7 @@ class Payreturn extends Controller
                             else{
                                     $deadline=strtotime('+1day');
                             }
-                            db('applist')->where('id',$res['appId'])->setField('deadline',$deadline);
+                            db('applist')->where('id',$res['appId'])->update(['deadline'=>$deadline,'status'=>1]);
                         }
                       
                    } 

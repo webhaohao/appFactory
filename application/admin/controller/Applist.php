@@ -8,7 +8,7 @@ class Applist extends Base
     {
     	// $list = ArticleModel::paginate(3);
         // $list=db('article')->alias('a')->join('cate c','c.id=a.cateid')->field('a.id,a.title,a.pic,a.author,a.state,c.catename')->paginate(3);
-        $list = AppModel::paginate(10);
+        $list = AppModel::paginate(10);;
     	$this->assign('list',$list);
         return $this->fetch();
     }
@@ -93,11 +93,12 @@ class Applist extends Base
 
     public function del(){
     	$id=input('id');
-		if(db('Article')->delete(input('id'))){
-			$this->success('删除文章成功！','lst');
-		}else{
-			$this->error('删除文章失败！');
-		}
+        if(db('applist')->where('id',$id)->setField('delstatus',1)){
+            $this -> success('删除成功!');      
+        }
+        else{
+                $this -> success('删除失败!');         
+        }
     	
     }
 

@@ -20,9 +20,12 @@ class Createapp extends Base{
             $data['uuid'] =$UUID;
             $data['time'] = time();
             $data['file']=$this->uploadPic();
-            $data['status'] = 1;
+            $data['status'] = 0;
+            //试用时间 一天
+            $data['ontrialTime'] =strtotime('+1day');
             //第一次建立app,默认时间为当前时间
             $data['deadline']=time();
+            $data['delstatus'] = 0;
             $res = db('applist')->insert($data);
             if($res){
                   return appResult(200,'App生成成功!');  

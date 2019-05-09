@@ -3,7 +3,9 @@ namespace app\index\controller;
 use app\index\controller\Base;
 class Alist extends Base{
       public function index(){
-          $res = db('applist')->where('userId',session('uid'))->select();
+          $res = db('applist')->where(['userId'=>session('uid'),
+                                       'delstatus' => 0   
+                                     ])->select();
           $this -> assign('list',$res); 
           return $this->fetch();
       }
@@ -20,12 +22,12 @@ class Alist extends Base{
             $res = db('applist')->where('id',$appid)->find();
             if($res){
                   if($res['deadline']<=time()){
-                        if($res['status']== 0){
+                        if($res['ontrialTime']<= time()){
                               $data=['msg'=>'App尚未激活'];
                         }
                         else{
                               $data=[
-                                    'msg'=>'App尚未激活,只能体验一次!'
+                                    'msg'=>'App尚未激活,只能体验一天!'
                               ];         
                         }
                         return appResult(500,'',$data);
@@ -42,5 +44,14 @@ class Alist extends Base{
                   // ];
                  
             }
+      }
+      public function del($id){
+            if(db('applist')->where('id',$id)->setField('delstatus',1)){
+                  $this -> success('删除成功！','index');      
+            }
+            else{
+                  $this -> success('删除失败!');         
+            }
+            
       }
 }

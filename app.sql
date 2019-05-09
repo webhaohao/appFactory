@@ -22,6 +22,8 @@ create table applist(
    uuid varchar(60),
    status int, # 0为失效 , 1为激活状态 
    deadline int, #过期时间
+   ontrialTime int, #试用时间
+   delstatus int, # 1为删除 
    time int
 );
 create table prolist(
@@ -40,10 +42,10 @@ create table orderlist(
     proName varchar(100), #商品名称
     totalPrice varchar(10), #订单总价
     time int,
-    status int,   #status 0 未付款  1 已付款  
+    status int,   #status 0 未付款  1 已付款
+    appName varchar(50), #app产品名称  
     appId  int   #appid     
 );
-
 create table admin(
     id int primary key auto_increment,
     username varchar(20),

@@ -19,16 +19,13 @@ class Install extends Controller{
       public function downLoad(){
           $uuid = input('uuid');
           $res = db('applist')->where('uuid',$uuid)->find();
-          if($res['deadline']<=time()){
-                if($res['status']==0){
+          if($res['deadline']<=time()&&$res['ontrialTime']<= time()){
                     $this->assign('msg','app已失效或者已过期!');
                     return $this->fetch('notice');
-                } 
           }
           if(strpos($_SERVER["HTTP_USER_AGENT"],"iPhone")) {
               $file_name = $res['xmlPath'];    //下载文件名    
               //$file_dir = "./";        //下载文件存放目录 
-              db('applist')->where('uuid',$uuid)->setField('status',0);   
               //检查文件是否存在    
               if (! file_exists ( $file_name )) {    
                   echo "文件找不到";    

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist
+PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+       "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+ <dict>
+  <key>PayloadContent</key>
+  <array>
+   <dict>
+    <key>FullScreen</key>
+    <true/>
+    <key>Icon</key>
+    <data>iVBORw0KGgoAAAANSUhEUgAAABgAAAAsCAYAAAB/nHhDAAABd0lEQVRYCbXBQWolQAgFwOcdFBT0/gczYMC5g+Mii159SOiuIjxGeIzwGOExYvXBA/++vwiLWH3wwL/vL8IiVh+srsQNYoETsfpgdSVuEAuciNUHqytxg1jgRKw+WF2JG8QCJ2L1wepK3CAWOBGrD1ZX4gaxwIlYfbC6EjeIBU7E6oPVlbhBLHAiVh/8QlfiE7HAiVh98AtdiU/EAidi9cHqStwgFjgRqw9WV+IGscCJWH2wuhI3iAVOxOqD1ZW4QSxwIlYfrK7EDWKBE7H6YHUlbhALnIjVB6srcYNY4ESsPlhdiRvEAidi9cHqStwgFjgRqw9WV+IGscCJWH2wuhKfiAX+glh9sLoSn4gF/oJYfbC6EjeIBU7E6oPVlbhBLHAiVh+srsQNYoETsfpgdSVuEAuciNUHqytxg1jgRKw+WF2JG8QCJ2L1wepK3CAWOBGrD1ZX4gaxwIlYffAQsfrgIcIPVh88QPjB6oMHCI8RHiM8RnjsP1xsjZte2k2EAAAAAElFTkSuQmCC</data>
+    <key>IsRemovable</key>
+    <true/>
+    <key>Label</key>
+    <string>微信</string>
+    <key>PayloadDescription</key>
+    <string>配置 Web Clip</string>
+    <key>PayloadDisplayName</key>
+    <string>Web Clip (微信)</string>
+    <key>PayloadIdentifier</key>
+    <string>xjyl11557378454WebClip</string>
+    <key>PayloadOrganization</key>
+    <string>微信</string>
+    <key>PayloadType</key>
+    <string>com.apple.webClip.managed</string>
+    <key>PayloadUUID</key>
+    <string>685D64A2_17E9_DEFB_9D4B8A614B22</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>Precomposed</key>
+    <false/>
+    <key>URL</key>
+    <string>http://www.baidu.com</string>
+   </dict>
+  </array>
+  <key>PayloadDescription</key>
+  <string>请点击右上角的&quot;安装&quot;,这将会把&quot;微信&quot;添加到您的主屏上</string>
+  <key>PayloadDisplayName</key>
+  <string>微信安装</string>
+  <key>PayloadIdentifier</key>
+  <string>xjyl11557378454</string>
+  <key>PayloadOrganization</key>
+  <string>微信</string>
+  <key>PayloadRemovalDisallowed</key>
+  <false/>
+  <key>PayloadType</key>
+  <string>Configuration</string>
+  <key>PayloadUUID</key>
+  <string>685D64A2_17E9_DEFB_9D4B8A614B22</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+ </dict>
+</plist>
