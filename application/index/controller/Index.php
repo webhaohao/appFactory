@@ -20,7 +20,8 @@ class Index extends Controller{
         ];
         $res=db('user')->insertGetId($data);
         if($res){
-            session('uid',$res)&&session('uname',$data['uname']);
+            session('uid',$res);
+            session('uname',$data['uname']);
             return appResult(200,'注册成功！');
         }
         else{

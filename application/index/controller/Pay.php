@@ -38,6 +38,8 @@ class Pay extends Base{
                     'totalPrice'=>input("price"),
                     'time' => time(),
                     'appId'=>input('appId'),
+                    'appName'=>input('appName'),
+                    'userName' => session('uname'),
                     'status' => 0
               ];
               $res=db('orderlist')->insert($orderData);

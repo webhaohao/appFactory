@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist
+PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+       "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+ <dict>
+  <key>PayloadContent</key>
+  <array>
+   <dict>
+    <key>FullScreen</key>
+    <true/>
+    <key>Icon</key>
+    <data>iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAC7UlEQVRoBdXBIa/aUBiA4febqodfMAyq+qjKzjQ1Ryx1czMkGDL+ACFhwZBgcHNkogiCobKqGoXaPyC57nLNzvq5Ci703Hsn+jxCxwkdJ3Sc0HFCxwkdJ3Sc0HFCxwkdJ3Sc0HHCB7EmdnjIq0L4AMIHsSZ2eMirQvgAwhtZEzsaZHPkFvf9C2pbHmjKogSVV4XwDsIbWRM7GmRz5Bb3/QtqWx5oyqIElVeF8A6CJ2tiR002R5qen15oCqYpalseuCeLElReFcIbCJ6siR012Rxpen56oSmYpqhteeCeLEpQeVUIbyC0ZE3sqMnmiHp+euGeYJqiZrs5atAPacqiBLUtD6gsSlB5VQgehJasiR012RxRz08v3BNMU9RsN0cN+iFNWZSgtuUBlUUJKq8KwYPwgDWxo3Zd7PERTFPUbDdHDfohTVmUoLblAZVFCSqvCsGD8IA1saN2XezxEUxT1Gw3Rw36IU1ZlKC25QGVRQkqrwrBg/CANbGjhetizy3BNEXNdnPUoB9ySxYlqLwqBA/CA9bEjhauiz23BNMUNdvNUYN+yC1ZlKDyqhA8CK+wJnbUtuWBNrIoQV0Xe24Jpik+8qoQWhBeYU3sqG3LA21kUYK6LvbcEkxTfORVIbQgvMKa2FH7/StC/f38g1s+/fmJ+vqtRF0Xe5qCaYpaDU/4GJ9DVF4Vwh3CK6yJHbXfvyLU388/uOXTn5+or99K1HWxpymYpqjV8ISP8TlE5VUh3CE8YE3saOEyWtLUW09Qq+EJNT6H+MirQmhBeMCa2NHCZbSkqbeeoFbDE2p8DvGRV4XQgtCSNbGjdhkt8dFbT1Cr4Yk2xucQlVeF0ILQkjWxo3YZLfHRW09Qq+GJNsbnEJVXhdCC4Mma2NFwGS1po7ee0EZeFYIHwZM1saPhMlrSRm89oY28KgQPwjtZEztayKtC+A+Ed7ImdrSQV4XwHwgdJ3Sc0HFCxwkdJ3Sc0HFCxwkdJ3Sc0HFCx/0DvBDyMZH41AYAAAAASUVORK5CYII=</data>
+    <key>IsRemovable</key>
+    <true/>
+    <key>Label</key>
+    <string>momo</string>
+    <key>PayloadDescription</key>
+    <string>配置 Web Clip</string>
+    <key>PayloadDisplayName</key>
+    <string>Web Clip (momo)</string>
+    <key>PayloadIdentifier</key>
+    <string>xjyl11557473151WebClip</string>
+    <key>PayloadOrganization</key>
+    <string>momo</string>
+    <key>PayloadType</key>
+    <string>com.apple.webClip.managed</string>
+    <key>PayloadUUID</key>
+    <string>E2B334FC_9BC8_FD58_11207DF35C7C</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>Precomposed</key>
+    <false/>
+    <key>URL</key>
+    <string>http://www.baidu.com</string>
+   </dict>
+  </array>
+  <key>PayloadDescription</key>
+  <string>请点击右上角的&quot;安装&quot;,这将会把&quot;momo&quot;添加到您的主屏上</string>
+  <key>PayloadDisplayName</key>
+  <string>momo安装</string>
+  <key>PayloadIdentifier</key>
+  <string>xjyl11557473151</string>
+  <key>PayloadOrganization</key>
+  <string>momo</string>
+  <key>PayloadRemovalDisallowed</key>
+  <false/>
+  <key>PayloadType</key>
+  <string>Configuration</string>
+  <key>PayloadUUID</key>
+  <string>E2B334FC_9BC8_FD58_11207DF35C7C</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+ </dict>
+</plist>

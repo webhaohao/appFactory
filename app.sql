@@ -44,6 +44,7 @@ create table orderlist(
     time int,
     status int,   #status 0 未付款  1 已付款
     appName varchar(50), #app产品名称  
+    userName varchar(50),#用户名
     appId  int   #appid     
 );
 create table admin(

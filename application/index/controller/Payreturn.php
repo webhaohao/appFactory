@@ -37,6 +37,7 @@ class Payreturn extends Controller
             $verify_result = $alipayNotify->verifyNotify();
             //验证支付接口是否成功
             if($verify_result){
+                  //http://app.cn/index/Payreturn/returnUrl?money=0.01&name=%E6%B5%8B%E8%AF%951&out_trade_no=05C7831D_B32C_908F_40F13FB0E565&pid=10000&trade_no=2019051015260315599&trade_status=TRADE_SUCCESS&type=alipay&sign=fe0c7a3e677d16ef6b1b95ded86c9917&sign_type=MD5  
                    if(input('trade_status')=='TRADE_SUCCESS'){
                         //判断订单状态  0为未付款 1为已付款
                         //根据订单号查询预订单详情,请求支付参数是否与数据库预订单是否一致

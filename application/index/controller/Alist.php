@@ -3,9 +3,9 @@ namespace app\index\controller;
 use app\index\controller\Base;
 class Alist extends Base{
       public function index(){
-          $res = db('applist')->where(['userId'=>session('uid'),
-                                       'delstatus' => 0   
-                                     ])->select();
+          $res = db('applist')->where(
+                              ['userId'=>session('uid')]
+                              )->select();
           $this -> assign('list',$res); 
           return $this->fetch();
       }
@@ -46,7 +46,7 @@ class Alist extends Base{
             }
       }
       public function del($id){
-            if(db('applist')->where('id',$id)->setField('delstatus',1)){
+            if(db('applist')->delete($id)){
                   $this -> success('删除成功！','index');      
             }
             else{
