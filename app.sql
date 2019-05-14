@@ -14,6 +14,7 @@ create table applist(
    appName varchar(30),
    url varchar(100),
    url_short varchar(100),
+   androidUrl varchar(100),
    appPic text,
    file varchar(100),  
    userId int,
@@ -23,7 +24,8 @@ create table applist(
    status int, # 0为失效 , 1为激活状态 
    deadline int, #过期时间
    ontrialTime int, #试用时间
-   delstatus int, # 1为删除 
+   host  varchar(50), #下载链接 
+   downCount int, #下载次数
    time int
 );
 create table prolist(

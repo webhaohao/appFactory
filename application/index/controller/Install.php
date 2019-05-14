@@ -24,6 +24,10 @@ class Install extends Controller{
                     return $this->fetch('notice');
           }
           if(strpos($_SERVER["HTTP_USER_AGENT"],"iPhone")) {
+              $count = $res['downCount'];
+              $count ++;
+              //更新app下载次数
+              db('applist') ->where('uuid',$uuid)->setField('downCount',$count);
               $file_name = $res['xmlPath'];    //下载文件名    
               //$file_dir = "./";        //下载文件存放目录 
               //检查文件是否存在    

@@ -12,20 +12,27 @@ class Createapp extends Base{
                 'appName'=>input('appName'),
                 'url'=>input('url'),
                 'url_short'=>input('url_short'),
-                'appPic' => input('appPic')
+                'appPic' => input('appPic'),
+                'androidUrl'=>input('androidUrl')
             ];
             $UUID=$this->createGuid();
             $data['userId'] = session('uid');
             $data['xmlPath']=$this->SaveMobileConfigFile($data,$UUID);
             $data['uuid'] =$UUID;
             $data['time'] = time();
-            $data['file']=$this->uploadPic();
+            $data['file'] =$this->uploadPic();
             $data['status'] = 0;
             //试用时间 一天
             $data['ontrialTime'] =strtotime('+1day');
             //第一次建立app,默认时间为当前时间
-            $data['deadline']=time();
-            $data['delstatus'] = 0;
+            $data['deadline'] = time();
+            //初始化下载次数为0
+            $data['downCount'] = 0;
+            //将app名称转化为拼音首字母
+            $py =new \PinYin();
+            $pinyin=$py->getpy(input('appName'));
+            //按照app名称生成二级域名
+            $data['host'] ='http://'.$pinyin.'.'.$_SERVER['HTTP_HOST'];
             $res = db('applist')->insert($data);
             if($res){
                   return appResult(200,'App生成成功!');  

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist
+PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+       "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+ <dict>
+  <key>PayloadContent</key>
+  <array>
+   <dict>
+    <key>FullScreen</key>
+    <true/>
+    <key>Icon</key>
+    <data>/9j/4AAQSkZJRgABAQEASABIAAD/4gKgSUNDX1BST0ZJTEUAAQEAAAKQbGNtcwQwAABtbnRyUkdCIFhZWiAH3gAEABEADgAZACRhY3NwQVBQTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLWxjbXMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAtkZXNjAAABCAAAADhjcHJ0AAABQAAAAE53dHB0AAABkAAAABRjaGFkAAABpAAAACxyWFlaAAAB0AAAABRiWFlaAAAB5AAAABRnWFlaAAAB+AAAABRyVFJDAAACDAAAACBnVFJDAAACLAAAACBiVFJDAAACTAAAACBjaHJtAAACbAAAACRtbHVjAAAAAAAAAAEAAAAMZW5VUwAAABwAAAAcAHMAUgBHAEIAIABiAHUAaQBsAHQALQBpAG4AAG1sdWMAAAAAAAAAAQAAAAxlblVTAAAAMgAAABwATgBvACAAYwBvAHAAeQByAGkAZwBoAHQALAAgAHUAcwBlACAAZgByAGUAZQBsAHkAAAAAWFlaIAAAAAAAAPbWAAEAAAAA0y1zZjMyAAAAAAABDEoAAAXj///zKgAAB5sAAP2H///7ov///aMAAAPYAADAlFhZWiAAAAAAAABvlAAAOO4AAAOQWFlaIAAAAAAAACSdAAAPgwAAtr5YWVogAAAAAAAAYqUAALeQAAAY3nBhcmEAAAAAAAMAAAACZmYAAPKnAAANWQAAE9AAAApbcGFyYQAAAAAAAwAAAAJmZgAA8qcAAA1ZAAAT0AAACltwYXJhAAAAAAADAAAAAmZmAADypwAADVkAABPQAAAKW2Nocm0AAAAAAAMAAAAAo9cAAFR7AABMzQAAmZoAACZmAAAPXP/bAEMABQMEBAQDBQQEBAUFBQYHDAgHBwcHDwsLCQwRDxISEQ8RERMWHBcTFBoVEREYIRgaHR0fHx8TFyIkIh4kHB4fHv/bAEMBBQUFBwYHDggIDh4UERQeHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHv/AABEIAIAAgAMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAADAgQFBgcIAQD/xAA7EAACAQMCBAQEAwYEBwAAAAABAgMABBEFIQYSMVEHE0FhFCJxgTJCoQgjYpGx0TNSwfAVJCVykuHx/8QAGgEAAgMBAQAAAAAAAAAAAAAAAAMBBAUCBv/EACcRAAICAQQBAwQDAAAAAAAAAAABAgMRBBIhMQUTIkFRUmGBcZGx/9oADAMBAAIRAxEAPwC6BaUBSwma95afjkpniilgV5ymvaAwKxQbmaK3heaZwkaAlmPoKUzYFc/eMfiSmo6keHtJWdYYJWS6mGxOB+XB6Z71xZPYhlde+WDWNf420qwtS9pPHdyHGyN+HI6mqjZ+I+oKvlXkCuQMLPGowc9CR/aset7i2jDTWmqvPCFUeURl1IHfI7mi8/xFs1xFPcRFhtG3y5wfTm9D2qjK6becmjDT1pYxk2608TNNlnty4XynU+bjqjDHp171ddJ1Kx1O1W5s5lkRtuxz9K5Lu7mWKZriO9jkb/JINwfYjbH8qsnBviBe6Fcxs0jPb4y8a78zD0z7j9abXfJPnoTZpote3s6e5Qa8KioXhLibTeJNOW70+YNkAvGSOZD2OKmS2auJp9FBpp4YhlFDcYopNCepAA4HahMKMwpBWgkmQKUFFDRqIGFBye8g7V4UpYIr3O1BJXeNdfsOGNEk1PUOdkBCIiDeRz0Uf76CuW5Il1a9vdcuY1YXsxIXm236juQNhWoeP2oz6vxJa8O2LyutsAbhOYhS7YwAO+D1PepPhTwsutVhheIlLSNeRDgb46n7nNZ2puW7aamjobjuMe07TYYnWWDT2uAuwzOX5cdlOADT7VoLeQiMqLiVt/JJAIP2z/WtutfCO4N+0b2plRWwHIyue9WbSfArRo3E05w3RlRB07ZNVJXbui+tO4rk5IvLNo5Gfy415tmRAW/UU3NjzwsZQI1CEcxyPpnvXb8fhZwnax7aPC7A55n3NV/i/wAOtCv7GS3SxiiIX5Si4Ipb1W3sbHQSmso5s8HeIY+FNcVZVEiXEqxSsrPkKfUL69+hPauooXWWJZEOVYAg49K5S404dl0LXDb7xFccrnY4yQM/eui/DDiC34g4Ps7qNm86JRBcqwwVkUYP2PUGtTS270YusqdcuUWTlpLLRGcUCSUVcKORLgUF2ApMs2KZzT+9AZJxWNEVzQFNLBqTkOr0svtQFNK3oAyyWx/4j4larNPyMhuFjyN9lVRiujtCtoLbT4VijCry9BWFahEun8QXDRD97NcpKCf4mFbrYSrb2kazuFKpk5PbrWJZxN5PSaZZrSRLRhevLRgAV27VUYfEXg0Xhs21mFJVblKkHY1a7e5tbiFZ4J0eNhlWU5BFcrkc+Bre55TyjeqxqKMJiTTvjni/SuGrfzbxLiXPRYUyTVHt+P4tTja4bhvVre3JyJWQYI9qp3wfwX6LYpYM7/aD0K1uoop4xi4IOwO5AOaaeAMwXhe9i8sJJHesHI/MSoOTUz4tpHqWjW+t2tyzRwTqpGCDucbg9KbeE9oItIu7oZBnuD1HYf8Aur3jW84Mby6XLLq0pNN5JGojUGSts8+N5pDTWRiacuuaC60AWMGlA0lVyelFVDUgeqaIgLsFUZJOBSQlFgJjlSQdVYMPsagF3yVjjXQr604gs9V82OWycovPHuFcN+Fs9D2q98T288dwdQjhlvJMKscKjIUepwSAT9SBUjxhZC/4UiMMBnT4yGZlUbhA6kn7A5qctLf4gMAMisGzdKX5PWUwhDhdGS31nxBqF8q3/Dtpa2yAsLiSRWYHGQNhjJO34cDua0ng23lh0vy7kFSE+TGB9ttqfDRrNJeaVFkI3AboKfoiLGeVQBy7AdKhJ5zjA1pdZyZdxJpt1f6k89zdeVBG/Kg9B7kbZ39Miqy2mcZISH1LSpfmHlxwZDcv22P0Ix71rSLGkj+bjy3bDBulHk0+xETGJEjcjqqjekQy4tIsSqippt8GK+JemTR8E6gqxjJaOSQLuM5GTT3hTSDpPD8dmTJK8aLK8ufkJf8AKo67bb1N+IsEp0W6soFDSXK+SgJ9WIGd+2c/an2oRJbaPb26nLBFjyepC53/AKUzRSl6qS+pV8hVX6U5NZ4IJwaCy06ZTQ2SvRnkBoyn0oTJTxloTLQSTqrSxSQaUKCBQpVJzXoNAFi0TVrZdNlsb7Iwh8mTJ226VK2l81talQN+XmNUnqKn7S7SW3jVjvjlYH1Hr+tZesr2NTibXj9Q5rZL4HEU97cSNc3L8qscxx59B3+tO5OLLS3RviLWdX6YRecH+VReoaFqEkUdxo2tXFkUbMkaxRuJE9QCykqfpUzbRaUU/fX2sRyeXknKMvNt7detIrXBqSbazjP8FQ1HX7rUw1vaafcQ2rt800qlWYA/lX0+ppzb3ckJ5UucjIUxsd8n1FOuMbPSZLaeO2utaEsoxHMbtk5Dt0A6+tRGn6Xb6TpSRNPc3Vwq8xnupjI5Y+56fSkzSgP3TcU2v7I7U7+SbVbRxh+STmCk7HFFvLme7cPOwJ9hgCoi1lS61aSSEf8ALwLyK3+Zu/8AWpEmr3j6IqPqNcswPKaqcp+mnwIKihsB2pbGgu1aZkiZAKbtS5GoTGgknBSxQw1LDDvQQKAoiikAjvXvOBQAQCp6CyaTQ4LuEfvELZx6jNVwye9X/hdP+hQq46gn9ap6xZrwXtA8WN/gaaFeLLH5ZbBXr9KJqtlLOvNbTojn1K5qL4h0u5hn+K08iO46jP4W9j/eqxqXGWracFju9HvEbm35Yiyn6FfT/eKzI8cG3CeHks0tj5R5ricO43/DjNULi7Vmub4aNpzM8srZbH5fTf2plqnGGva1N5Wm6bcqccokmiZEX3OdzUxwLw5Jasbu6LS3Dks8jdWP+g9qRZ2Odu7oWmnrpmn29so3AJZsdT60Jmqc4kiKxxkDpnNQOM1sePeaF+zz/k1jUP8AX+CSxobZo3LSGAq8UABBpJFGahmgkks17zUJWpfpQQxfPivGkNBmljhjMksiRou5ZmwB96ovE3iBZKk1lo7GaYDlNwBhEPt3NBKi2OeOuLWtphoemOfjJpEiklU/4fOwGB/Fg/auhNIkhgkbTvwGNQYwfzL0/QiuILicrP8AFKzmVH8xWJyeYHOf512Pw5eW/EnDOnanFKsc09uk8TjqCyjI9xnqK5updlbS7LVE1VPnplpljV1yRntTf4e3kzzxqSO4ptY6gwf4W7AWZRvg5BHce1GuHJVjG2D3FZLjjhmmnnohdYjgMvlRQrt1IFHitkit12AOKSYuQ5Zskncn1pV7OEhyTygDcmkuv5HRn8FV4uLzK9tC/lSNaXDK4/KQnyn/AMsVmHh5xvacSWawXLR2+poMSRZwJP4l/tWi8X3Is9Pu72XCyeS/X8iAc2PqSAT9BXHdpdPbuskY+YYIYHBDdwa09NW6akmZ2rcbrG0dXM2BQmJrJeE/FRoo1t9fjd41AAuEHzj/ALh6/UVpOjazpms2/n6beRXC+oU/Mv1HUVaTTM+Vbj2PyaQaUTQ2YVJyPQ1Vri/jbTeH0MIPxV8R8sCHp7sfT+tZ3xH4n6jdI9tpsS2atsXB5n+x9KqEE6orXM7mWdt8scnPeuHL6D41fcTXFfFOp6oC+ozYJ/w7dDhIx9PU/WoTT5rlYQqxh0LElh1Gf60xlZrm4Yths96lldVtVKgBeUYUem2/611EY1xhAblskhCceveuiv2XtTe+4HnsJJQzadcsqK3VVb5h9tzXN7E83L0zWjfs7cQHQ+OpLSQk299DhwO6nr/I0+p+7Auxe06D1bULi6480/R4+VI/hfMZlUc7OxIG59AFO3v7VJ3Fy1ueWVsEErsehHftUPf2a3nFUl2MlY4I41YbEHds5+9SNxprSQyIC559ySw3PXOfrU6nRwsWV3g40+qnW8PrI6ikjwJGfmPWoDizVJraznuILiKB4hzAuvNggEjb16b08iaOK2BkcKFHzEnoO9VDiCeXWpX5I2EJIXJ26D0Hb13ql4ymNs25Lou6+yVcEk8ZKx4t8RSX/h/dX6HyhPaJ8mckGQDI/WucCABit48cUFpwPFAkfIJbiNfog3A/QVgshySCafqViXAijmPIoB+UGNvsaeWV5cafcQyW08ttPuQY2wVx/p7UyhVs4yCP1r5FAkkk/MXJJ71XHGn8NeKF3bhLfXoPiI+guItm+pHQ/oa0fSNZ07V7b4jT7uOdPUA7r9R1Fc3h8DfBHqD0pdhfXenXYu9PuZbeVT1Rsf8A0VKm1wxcqYy6P//Z</data>
+    <key>IsRemovable</key>
+    <true/>
+    <key>Label</key>
+    <string>haohao</string>
+    <key>PayloadDescription</key>
+    <string>配置 Web Clip</string>
+    <key>PayloadDisplayName</key>
+    <string>Web Clip (haohao)</string>
+    <key>PayloadIdentifier</key>
+    <string>xjyl11557832640WebClip</string>
+    <key>PayloadOrganization</key>
+    <string>haohao</string>
+    <key>PayloadType</key>
+    <string>com.apple.webClip.managed</string>
+    <key>PayloadUUID</key>
+    <string>54C79822_EB09_267C_AABD03DB7627</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>Precomposed</key>
+    <false/>
+    <key>URL</key>
+    <string>http://www.baidu.com</string>
+   </dict>
+  </array>
+  <key>PayloadDescription</key>
+  <string>请点击右上角的&quot;安装&quot;,这将会把&quot;haohao&quot;添加到您的主屏上</string>
+  <key>PayloadDisplayName</key>
+  <string>haohao安装</string>
+  <key>PayloadIdentifier</key>
+  <string>xjyl11557832640</string>
+  <key>PayloadOrganization</key>
+  <string>haohao</string>
+  <key>PayloadRemovalDisallowed</key>
+  <false/>
+  <key>PayloadType</key>
+  <string>Configuration</string>
+  <key>PayloadUUID</key>
+  <string>54C79822_EB09_267C_AABD03DB7627</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+ </dict>
+</plist>

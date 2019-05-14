@@ -35,6 +35,7 @@
             margin-top: 13px;
 
         }
+        .btn-u-i{border: 0; color: #fff; font-size: 14px; cursor: pointer; font-weight: 400; padding: 6px 13px; position: relative; background: #d9534f; display: inline-block; text-decoration: none;}
         .btn-u { border: 0; color: #fff; font-size: 14px; cursor: pointer; font-weight: 400; padding: 6px 13px; position: relative; background: #5cb85c; display: inline-block; text-decoration: none; }
         .btn-u:hover{background: #f60; }
         .breadcrumbs { overflow: hidden; background: url(./images/breadcrumbs.png) no-repeat scroll top center; background-size: 100% auto; padding:15% 0 6px; border-bottom: solid 1px #eee; }
@@ -61,13 +62,13 @@ $(function(){
 
         <div class="container">
 
-            <h1 class="pull-left">演示APP</h1>
+            <h1 class="pull-left">{$ls.appName}</h1>
 
             <ul class="pull-right breadcrumb">
 
                 <li>大小：6.07 MB</li>
 
-                <li>2019-01-05</li>
+                <li>{$ls.time|date="Y-m-d",###}</li>
 
             </ul>
 
@@ -86,10 +87,12 @@ $(function(){
 
                 <div class="loading"></div>
 
-                    <span id="checkinfo" style="display:block;">		            
-                        <a href="/index/Install/down?uuid={$ls.uuid}" class="btn-u btn-u-lg" style="border-radius: 50px;"><i class="fa fa-download"></i> 安装苹果APP</a>
+                    <span style="display:block;">		            
+                        <a href="/index/Install/down?uuid={$ls.uuid}" class="btn-u-i btn-u-lg" style="border-radius: 50px;"><i class="fa fa-download"></i> 安装苹果APP</a>
                     </span>
-
+                    <span style="display:block;padding-top:10px;">		            
+                        <a href="{$ls.androidUrl}" class="btn-u btn-u-lg" style="border-radius: 50px;"><i class="fa fa-download"></i>安卓App下载</a>
+                    </span>    
                 </div>
 
             </div>
@@ -115,7 +118,7 @@ $(function(){
     <!---->
     <hr class="devider devider-dotted">
 
-    <div id="" class="view row margin-bottom-30">    
+    <div class="view row margin-bottom-30">    
 
     <div class="col-md-12" style="text-align:center;">或者用手机扫描下面的二维码安装<br><br>
 
@@ -126,33 +129,33 @@ $(function(){
     </div>
     <div id="weixin" style="display: none">
 
-    <div class="click_opacity"></div>
+            <div class="click_opacity"></div>
 
-    <div class="to_btn">
+            <div class="to_btn">
+<!-- 
+                <span class="span1"><img src="picture/click_btn.png"></span>
 
-        <span class="span1"><img src="picture/click_btn.png"></span>
+                <span class="span2"><em>1</em> 点击右上角<img src="picture/menu.png">打开菜单</span>
 
-        <span class="span2"><em>1</em> 点击右上角<img src="picture/menu.png">打开菜单</span>
+                <span class="span2"><em>2</em> 选择<img src="picture/safari.png">用Safari打开下载</span> -->
 
-        <span class="span2"><em>2</em> 选择<img src="picture/safari.png">用Safari打开下载</span>
-
-    </div>
+            </div>
 
     </div>
 
     <div id="weixin_an" style="display: none">
 
-    <div class="click_opacity"></div>
+        <div class="click_opacity"></div>
 
-    <div class="to_btn">
+        <div class="to_btn">
+<!-- 
+            <span class="span1"><img src="picture/click_btn.png"></span>
 
-        <span class="span1"><img src="picture/click_btn.png"></span>
+            <span class="span2"><em>1</em> 点击右上角<img src="picture/menu_android.png">打开菜单</span>
 
-        <span class="span2"><em>1</em> 点击右上角<img src="picture/menu_android.png">打开菜单</span>
+            <span class="span2 android_open"><em>2</em> 选择<img src="picture/android.png"></span> -->
 
-        <span class="span2 android_open"><em>2</em> 选择<img src="picture/android.png"></span>
-
-    </div>
+        </div>
 
     </div>
 </div>
@@ -166,7 +169,7 @@ $(function(){
     <div class="container">
         <div class="row">
             <div class="col-lg-12  col-xs-12 col-md-12 col-sm-12 text-center">
-				页面由 <a href="">IOS工厂</a> 提供
+				页面由 <a href="">爱打包</a> 提供
             </div>
         </div><!--/row-fluid-->
     </div><!--/container-->

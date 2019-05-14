@@ -36,6 +36,7 @@
           <th>App名称</th>
           <th>h5地址(已转短链接)</th>
           <th>APP有效期</th>
+          <th>APP下载量</th>
           <th>APP状态</th>
           <th>操作</th>
         </tr>
@@ -63,9 +64,10 @@
                 <td>{$vo.appName}</td>
                 <td>{$vo.url_short}</td>
                 <td>{$vo.deadline|date="Y-m-d H:i:s",###}</td>
+                <td>{$vo.downCount}</td>
                 <td>{$vo['status'] ? '<span class="label label-success">有效</span>':'<span class="label label-danger">无效</span>'}</td>
                 <td>
-                    <button class="btn btn-sm btn-success appInstallLink" data-uuid="{$vo.uuid}">app安装链接</button>
+                    <button class="btn btn-sm btn-success appInstallLink" data-uuid="{$vo.uuid}" data-host="{$vo.host}">app安装链接</button>
                     <button class="btn btn-sm btn-info appaActivate" data-uuid="{$vo.uuid}">app激活</button>  
                     <button class="btn btn-sm btn-danger" onclick="warning('确定要删除吗?','{:url('Alist/del',array('id'=>$vo['id']))}')">删除</button>
                 </td>
@@ -112,7 +114,9 @@
           //var uid={:session('uid')};
           //获取唯一标识的uuid
           var uuid = $(this).attr('data-uuid');
-          var urlencode = encodeURIComponent(window.location.protocol+"//"+window.location.host+'/index/Install?uuid='+uuid);
+          var host = $(this).attr('data-host')
+          //var urlencode = encodeURIComponent(window.location.protocol+"//"+window.location.host+'/index/Install?uuid='+uuid);
+          var urlencode = encodeURIComponent(host+'/index/Install?uuid='+uuid);
            $.ajax({
                 url:'http://api.weibo.com/2/short_url/shorten.json?source=2849184197&url_long='+urlencode,
                 type:'GET',

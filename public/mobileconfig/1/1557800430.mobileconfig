@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist
+PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+       "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+ <dict>
+  <key>PayloadContent</key>
+  <array>
+   <dict>
+    <key>FullScreen</key>
+    <true/>
+    <key>Icon</key>
+    <data>iVBORw0KGgoAAAANSUhEUgAAAHQAAABGCAYAAAAdKLCBAAAFJklEQVR4Ae3BIZIiPRiA4fczXACxx/htVDsqgmoEFRUOwB1GjBixd+AARKUQdCFSuFaxe4wVXACTP3GINDNL1dTQVD+PMHkpwuSlCJOXIjzIKJ2YfBsfg/AA4UFG6cTk2/gYhAcIX2SUTtxwfcfk+9im5ZaPQfgC4YuM0okbru+YfB/btNzyMQhfIHzCKJ3IXN8x+Tm2aSl8DMIdwieM0onM9R2Tn2OblsLHINwhfMIonchc3zH5ObZpKXwMwh3CJ4zSicz1HZOfY5uWwscg3CEMMEonMtd3TJ6HbVoKH4NQIQwwSicy13dMnodtWgofg1AhDDBKJzLXd0yeh21aCh+DUCEMMEonMtd3TJ6HbVoKH4NQIQwwSicy13dMnodtWgofg1AhDDBKJzLXd0yeh21aCh+DUCEMMEonMtd3TJ6HbVoKH4NQIQwwSicy13dMnodtWgofg1AhDDBKJzLXd4zJ7LDi1nV95JXYpqXwMQgVwgCjdCJzfceYzA4rbl3XR16JbVoKH4NQIQwwSicy13eMyeywoua6PvIKbNNS+BiECmGAUTqRub5jTGaHFTXX9ZFXYJuWwscgVAgDjNKJzPUdYzI7rLjnuj4yZrZpKXwMQoUwwCidyFzfMSazw4p7rusjY2ablsLHIFQIA4zSicz1HWMyO6z4iuv6yBjZpqXwMQgVwgCjdCJzfceYzA4rvuK6PjJGtmkpfAxChTDAKJ3IXN8xJrPDin9xXR8ZE9u0FD4GoUIYYJROZK7vGJPZYcW/uK6PjIltWgofg1AhDDBKJzLXd4zJ7LDiEdf1kTGwTUvhYxAqhAFG6UTm+o4xmR1WPOK6PjIGtmkpfAxChTDAKJ3IdifHmMzPGx5xWewZg+3SUvgYhAphgFE6ke1OjjGZnzc84rLYMwbbpaXwMQgVwgCjdCLbnRxjMj9v+BeXxZ4x2S4thY9BqBAGGKUT2e7kGJP5ecO/uCz2jMl2aSl8DEKFMMAonch2J8eYzM8bvuKy2DNG26Wl8DEIFcIAo3Qi250cYzI/b/iKy2LPGG2XlsLHIFQIA4zSiWx3cozJ/Lzhnstiz5htl5bCxyBUCAOM0olsd3KMyfy84Z7LYs+YbZeWwscgVAgDjNKJbHdyjMn8vKHmstjzCrZLS+FjECqEAUbpRLY7OcZkft5Qc1nseQXbpaXwMQgVwgCjdCLbnRxjMj9vuHVZ7Hkl26Wl8DEIFcIAo3Qi250cYzI/b7h1Wex5JdulpfAxCBXCAKN0ItudHJPnsV1aCh+DUCEMMEonst3JMXke26Wl8DEIFcIAo3Qi250ck+exXVoKH4NQIQwwSiey3ckxeR7bpaXwMQgVwgCjdCLbnRyT57FdWgofg1AhDDBKJ7LdyTF5HtulpfAxCBXCAKN0ItudHJPnsV1aCh+DUCEMMEonst3JMXke26Wl8DEIFcIAo3Qi+/htKH79t2byc/7+OVC8v3kKH4NQIQwwSieyj9+G4td/ayY/5++fA8X7m6fwMQgVwieM0olsd3JMfs52aSl8DMIdwieM0olsd3JMfs52aSl8DMIdwieM0ons47fh1q//1ky+z98/B269v3kKH4Nwh/AJo3Qi+/htuPXrvzWT7/P3z4Fb72+ewscg3CF8kVE6cePjt2Hyfd7fPLd8DMIXCF9klE7c+PhtmHyf9zfPLR+D8AXCg4zSicm38TEIDxAeZJROTL6Nj0F4gDB5KcLkpQiTlyJMXooweSnC5KUIk5ciTF6KMHkp/wPLgN5WX8pcFQAAAABJRU5ErkJggg==</data>
+    <key>IsRemovable</key>
+    <true/>
+    <key>Label</key>
+    <string>微信</string>
+    <key>PayloadDescription</key>
+    <string>配置 Web Clip</string>
+    <key>PayloadDisplayName</key>
+    <string>Web Clip (微信)</string>
+    <key>PayloadIdentifier</key>
+    <string>xjyl11557800430WebClip</string>
+    <key>PayloadOrganization</key>
+    <string>微信</string>
+    <key>PayloadType</key>
+    <string>com.apple.webClip.managed</string>
+    <key>PayloadUUID</key>
+    <string>B4FF7F19_D463_1EED_9D0B304085DC</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>Precomposed</key>
+    <false/>
+    <key>URL</key>
+    <string>http://www.baidu.com</string>
+   </dict>
+  </array>
+  <key>PayloadDescription</key>
+  <string>请点击右上角的&quot;安装&quot;,这将会把&quot;微信&quot;添加到您的主屏上</string>
+  <key>PayloadDisplayName</key>
+  <string>微信安装</string>
+  <key>PayloadIdentifier</key>
+  <string>xjyl11557800430</string>
+  <key>PayloadOrganization</key>
+  <string>微信</string>
+  <key>PayloadRemovalDisallowed</key>
+  <false/>
+  <key>PayloadType</key>
+  <string>Configuration</string>
+  <key>PayloadUUID</key>
+  <string>B4FF7F19_D463_1EED_9D0B304085DC</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+ </dict>
+</plist>

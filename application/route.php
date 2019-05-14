@@ -9,13 +9,6 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 // use think\Route;
-// Route::domain('app','admin');
-return [
-    '__pattern__' => [
-        'name' => '\w+',
-    ],
-    '[hello]'     => [
-        ':id'   => ['index/hello', ['method' => 'get'], ['id' => '\d+']],
-        ':name' => ['index/hello', ['method' => 'post']],
-    ]
-];
+// url('admin/login','','shtml',true);
+// Route::domain('admin','admin/login');
+

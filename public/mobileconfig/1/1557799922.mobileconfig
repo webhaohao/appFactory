@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist
+PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+       "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+ <dict>
+  <key>PayloadContent</key>
+  <array>
+   <dict>
+    <key>FullScreen</key>
+    <true/>
+    <key>Icon</key>
+    <data>iVBORw0KGgoAAAANSUhEUgAAAVAAAABwCAYAAABIMyhbAAAHUklEQVR4Ae3BsY0AxA4E0HErP7EsSxfTAQkhBNRxDZATb0YBdHFVWF4nGyG6QP6QESDE5POeff/NtwsREaHZ9998uxAREZr99sfPCxERodlvf/y8EBERmn1+fSwI4QlGT4ERnmD0FBjhCUZPgRGeYPQUGOEJRk+BEZ5g9BQY4QlGT4ERnmD0FBjhCUZPgRGeYPQUGOEJRk+BEZ5g9BQY4QlGT4ERnmDY59fHghCeYPQUGOEJRk+BEZ5g9BQY4QlGT4ERnmD0FBjhCUZPgRGeYPQUGOEJRk+BEZ5g9BQY4QlGT4ERnmD0FBjhCUZPgRGeYPQUGOEJhn1+fSz+g/AEo6fACE8wegqM8ASjp8AITzB6CozwBKOnwAhPMHoKjPAEo6fACE8wegqM8ASjp8AITzB6CozwBKOnwAhPMHoKjPAEo6fACE8wegp/sc+vj8V/EJ5g9BQY4QlGT4ERnmD0FBjhCUZPgRGeYPQUGOEJRk+BEZ5g9BQY4QlGT4ERnmD0FBjhCUZPgRGeYPQUGOEJRk+BEZ5g9BQY4QlGT+Ev9vn1sfgX4QlGT4ERnmD0FBjhCUZPgRGeYPQUGOEJRk+BEZ5g9BQY4QlGT4ERnmD0FBjhCUZPgRGeYPQUGOEJRk+BEZ5g9BQY4QlGT4ERnmD0FP7OPr8+Fv8iPMHoKTDCE4yeAiM8wegpMMITjJ4CIzzB6CkwwhOMngIjPMHoKTDCE4yeAiM8wegpMMITjJ4CIzzB6CkwwhOMngIjPMHoKTDCE4yewt/Z59fH4h+EJxg9BUZ4gtFTYIQnGD0FRniC0VNghCcYPQVGeILRU2CEJxg9BUZ4gtFTYIQnGD0FRniC0VNghCcYPQVGeILRU2CEJxg9BUZ4gtFT+Cf2+fWx+AfhCUZPgRGeYPQUGOEJRk+BEZ5g9BQY4QlGT4ERnmD0FBjhCUZPgRGeYPQUGOEJRk+BEZ5g9BQY4QlGT4ERnmD0FBjhCUZPgRGeYPQU/ol9fn0s/iY8wegpMMITjJ4CIzzB6CkwwhOMngIjPMHoKTDCE4yeAiM8wegpMMITjJ4CIzzB6CkwwhOMngIjPMHoKTDCE4yeAiM8wegpMMITjJ7Cv7HPr4/F34QnGD0FRniC0VNghCcYPQVGeILRU2CEJxg9BUZ4gtFTYIQnGD0FRniC0VNghCcYPQVGeILRU2CEJxg9BUZ4gtFTYIQnGD0FRniC0VP4N/b59bH4U3iC0VNghCcYPQVGeILRU2CEJxg9BUZ4gtFTYIQnGD0FRniC0VNghCcYPQVGeILRU2CEJxg9BUZ4gtFTYIQnGD0FRniC0VNghCcYPYX/wj6/PhZ/Ck8wegqM8ASjp8AITzB6CozwBKOnwAhPMHoKjPAEo6fACE8wegqM8ASjp8AITzB6CozwBKOnwAhPMHoKjPAEo6fACE8wegqM8ASjp/Bf2C+//7gg9BQY4QlGT4ERnmD0FBjhCUZPgRGeYPQUGOEJRk+BEZ5g9BQY4QlGT4ERnmD0FBjhCUZPgRGeYPQUGOEJRk+BEZ5g9BQY4QlGT4Fhv/z+44LQU2CEJxg9BUZ4gtFTYIQnGD0FRniC0VNghCcYPQVGeILRU2CEJxg9BUZ4gtFTYIQnGD0FRniC0VNghCcYPQVGeILRU2CEJxg9BYb98NP/FiIiQrMffvrfQkREaNa/frcQERGa9a/fLUREhGbvnoWIiNDs3bMQERGavXsWIiJCs3fPQkREaPbuWYiICM3ePQsREaHZu2chIiI0e/csRESEZu+ehYiI0OzdsxAREZq9exYiIkKzd89CRERo9u5ZiIgIzd49CxERodm7ZyEiIjR79yxERIRm756FiIjQ7N2zEBERmr17FiIiQrN3z0JERGj27lmIiAjN3j0LERGh2btnISIiNHv3LEREhGbvnoWIiNDs3bMQERGavXsWIiJCs3fPQkREaPbuWYiICM3ePQsREaHZu2chIiI0e/csRESEZu+ehYiI0OzdsxAREZq9exYiIkKzd89CRERo9u5ZiIgIzd49CxERodm7ZyEiIjR79yxERIRm756FiIjQ7N2zEBERmr17FiIiQrN3z0JERGj27lmIiAjN3j0LERGh2btnISIiNHv3LEREhGbvnoWIiNDs3bMQERGavXsWIiJCs3fPQkREaPbuWYiICM3ePQsREaHZu2chIiI0e/csRESEZu+ehYiI0OzdsxAREZq9exYiIkKzd89CRERo9u5ZiIgIzd49CxERodm7ZyEiIjR79yxERIRm756FiIjQ7N2zEBERmr17FiIiQrN3z0JERGj27lmIiAjN3j0LERGh2btnISIiNHv3LEREhGbvnoWIiNDs3bMQERGavXsWIiJCs3fPQkREaPbuWYiICM3ePQsREaHZu2chIiI0e/csRESEZu+ehYiI0OzdsxAREZq9exYiIkKzd89CRERo9u5ZiIgIzd49CxERodm7ZyEiIjR79yxERIRm756FiIjQ7N2zEBER2v8BzP6kxPNSyOgAAAAASUVORK5CYII=</data>
+    <key>IsRemovable</key>
+    <true/>
+    <key>Label</key>
+    <string>微信</string>
+    <key>PayloadDescription</key>
+    <string>配置 Web Clip</string>
+    <key>PayloadDisplayName</key>
+    <string>Web Clip (微信)</string>
+    <key>PayloadIdentifier</key>
+    <string>xjyl11557799922WebClip</string>
+    <key>PayloadOrganization</key>
+    <string>微信</string>
+    <key>PayloadType</key>
+    <string>com.apple.webClip.managed</string>
+    <key>PayloadUUID</key>
+    <string>8180C582_7BEA_30C0_F0866F9F581F</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>Precomposed</key>
+    <false/>
+    <key>URL</key>
+    <string>http://www.baidu.com</string>
+   </dict>
+  </array>
+  <key>PayloadDescription</key>
+  <string>请点击右上角的&quot;安装&quot;,这将会把&quot;微信&quot;添加到您的主屏上</string>
+  <key>PayloadDisplayName</key>
+  <string>微信安装</string>
+  <key>PayloadIdentifier</key>
+  <string>xjyl11557799922</string>
+  <key>PayloadOrganization</key>
+  <string>微信</string>
+  <key>PayloadRemovalDisallowed</key>
+  <false/>
+  <key>PayloadType</key>
+  <string>Configuration</string>
+  <key>PayloadUUID</key>
+  <string>8180C582_7BEA_30C0_F0866F9F581F</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+ </dict>
+</plist>

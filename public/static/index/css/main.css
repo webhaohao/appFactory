@@ -83,8 +83,10 @@ a{
 a:hover{
   text-decoration:none;
 }
-a:visited,a:active,a:focus{
+a:visited,a:active,a:focus,a:visited,a:hover{
   text-decoration:none;
+  outline: none;
+  /* color:inherit; */
 }
 .layout-side {
   position: fixed;
@@ -189,6 +191,10 @@ nav.navbar{
   cursor: pointer;
   background: none;
   border: 1px solid transparent;
+}
+.ms-btn-primary:focus {
+  color: #fff;
+  background: #37c19f;
 }
 .banner-con .ms-btn {
   border-color: #fff;
