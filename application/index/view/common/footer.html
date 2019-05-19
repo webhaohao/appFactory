@@ -70,62 +70,6 @@
        </div>
    </div> 
 </footer>
-<!---注册模态框-->
-<div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-<div class="modal-dialog" style="width:500px;">
-   <div class="modal-content">
-       <div class="modal-header">
-           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-           <h4 class="modal-title" id="myModalLabel">用户注册</h4>
-       </div>
-       <div class="modal-body">
-           <form class="form-horizontal" role="form" id="regForm">
-               <div class="form-group">
-                   <div class="col-sm-12">
-                       <input type="text" class="form-control" name="uname"  placeholder="请输入您的用户名(中文、英文、数字皆可)">
-                   </div>
-               </div>
-               <div class="form-group">
-                   <div class="col-sm-12">
-                       <input type="text" class="form-control" name="phone"  placeholder="请输入您的手机号">
-                   </div>
-               </div>
-               <div class="form-group">
-                   <div class="col-sm-8">
-                       <input type="text" class="form-control" name="phone"  placeholder="请输入短信验证码">
-                   </div>
-                   <div class="col-sm-4">
-                         <button type="button" class="ms-btn ms-btn-primary">获取验证码</button>  
-                   </div>
-               </div>
-               <div class="form-group">
-                   <div class="col-sm-12">
-                       <input type="password" class="form-control" name="upwd" placeholder="请输入密码，密码长度不能少于6位">
-                   </div>
-               </div>
-               <div class="form-group">
-                   <div class="col-sm-12">
-                       <input type="password" class="form-control" name="upwd2"  placeholder="请再次输入密码">
-                   </div>
-               </div>
-               <!--<div class="form-group">-->
-                   <!--<div class="col-sm-offset-2 col-sm-10">-->
-                       <!--<div class="checkbox">-->
-                           <!--<label>-->
-                               <!--<input type="checkbox">请记住我-->
-                           <!--</label>-->
-                       <!--</div>-->
-                   <!--</div>-->
-               <!--</div>-->
-           </form>
-       </div>
-       <div class="modal-footer">
-           <!--<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>-->
-           <button type="button" class="ms-btn ms-btn-primary" id="regBtn">注册</button>
-       </div>
-   </div><!-- /.modal-content -->
-</div><!-- /.modal -->
-</div>
 <!--登陆模态框-->
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 <div class="modal-dialog">
@@ -166,73 +110,33 @@
 </div>
 <script>
   $(function(){
-        //用户注册
-        $("#regBtn").on('click',regFun);   
         //用户登录
         $("#loginBtn").on('click',loginFun);
-   
-        $('#regForm input[name=uname]').blur(checkUname);
-        $('#regForm input[name=upwd]').blur(checkPwd);
-        $('#regForm input[name=upwd2]').blur(checkPwd2)
   }) 
-  //用户名验证
-  function checkUname(){
-       var uname = $.trim($("#regForm input[name=uname]").val());
-       if(!uname){
-           toastr.error('用户不能为空!');
-           return false;
-       }
-       else if(uname.length>10){
-          toastr.error('用户不能超过10位字符!');
-          return false;     
-       }
-       else{
-           return true;
-       }
-  }
-  function checkPwd(){
-      var pwd = $.trim($("#regForm input[name=upwd]").val());
-      if(!pwd){
-          toastr.error('密码不能为空!'); 
-      }
-      else{
-          return true;
-      }
-  }
-  function checkPwd2(){
-       var pwd = $.trim($("#regForm input[name=upwd]").val());
-       var pwd2 = $.trim($("#regForm input[name=upwd2]").val());
-       if(pwd !== pwd2){
-           toastr.error('两次输入密码不一致!');
-           return false;
-       }
-       else{
-           return true;
-       }
-  }
-  function regFun(){
-       //toastr.info('Are you the 6 fingered man?')
-       if(checkUname()&&checkPwd()&&checkPwd2()){
-           var data=$("#regForm").serialize();
-           $.ajax({
-               url:'/index/index/Reg',
-               type:'POST',
-               data:data,
-               success:function(data){
-                       if(data.code==200){
-                           toastr.info(data.msg);
-                           setTimeout(function(){
-                               location.href='/index/Main';
-                           },1000);  
+ 
+//   function regFun(){
+//        //toastr.info('Are you the 6 fingered man?')
+//        if(checkUname()&&checkPwd()&&checkPwd2()){
+//            var data=$("#regForm").serialize();
+//            $.ajax({
+//                url:'/index/index/Reg',
+//                type:'POST',
+//                data:data,
+//                success:function(data){
+//                        if(data.code==200){
+//                            toastr.info(data.msg);
+//                            setTimeout(function(){
+//                                location.href='/index/Main';
+//                            },1000);  
                           
-                       }
-                       else{
-                           toastr.error(data.msg);
-                       }                 
-               }
-           })
-       }
-  }
+//                        }
+//                        else{
+//                            toastr.error(data.msg);
+//                        }                 
+//                }
+//            })
+//        }
+//   }
   function loginFun(){
       var data=$("#loginForm").serialize();
       $.ajax({
