@@ -525,7 +525,7 @@ z .notification{
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.3333333;
-  border-radius: 6px;
+  /* border-radius: 6px; */
 }
 .login-common .verification-code .ms-btn-primary {
   width: 27%;
