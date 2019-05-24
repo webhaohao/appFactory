@@ -1,0 +1,116 @@
+{include file="common/header"}
+<div class="register login-common">
+        <div class="login-logo registered-logo">
+                <img src="__PUBLIC__/images/logo.png" class="img-responsive hidden-xs" alt="">
+                <div class="slogan-wrap">
+                       <div class="slogan clearfix">
+                              <div class="fl">
+                                    <img src="__PUBLIC__/images/login-l.png" alt="">
+                              </div>   
+                              <div class="text fl">高效的移动应用服务平台</div>
+                              <div class="fl">
+                                    <img src="__PUBLIC__/images/login-r.png" alt="">
+                             </div>   
+                       </div> 
+                </div>
+        </div>
+        <form action="" method="post" id="loginForm">
+                <div class="form-group">
+                    <label for="" class="iconfont icon-tel"></label>
+                    <input type="text" class="form-control input-lg" name="phone" placeholder="请输入手机号">
+                </div>
+                <div class="form-group">
+                    <label for="" class="iconfont icon-pwd"></label>
+                    <input type="password" class="form-control input-lg" name="upwd" placeholder="请输入密码，密码长度不能少于6位">
+                </div>
+                <button class="ms-btn ms-btn-primary input-lg mt20">登录</button>
+                <div class="clearfix mt15">
+                        <a href="/index/Register" class="fl">免费注册</a>
+                        <a href="/index/find-password" class="fr">忘记密码</a>
+                </div>
+        </form>
+</div>
+<script>
+    $(function(){
+        $('#logoinForm input[name=uname]').blur(checkUname);
+        $('#logoinForm input[name=upwd]').blur(checkPwd);
+        $('#logoinForm input[name=phone]').blur(isPoneAvailable);
+        $("#logoinForm").on('click',function(e){
+                e.preventDefault();
+                if(checkUname()&&checkPwd()){
+                    return false;
+                }
+                regFun();
+        })
+       
+    })
+    //用户名验证
+    function checkUname(){
+        var uname = $.trim($("#logoinForm input[name=uname]").val());
+        if(!uname){
+            toastr.error('用户不能为空!');
+            return false;
+        }
+        else if(uname.length>10){
+            toastr.error('用户不能超过10位字符!');
+            return false;     
+        }
+        else{
+            return true;
+        }
+    }
+    function checkPwd(){
+        var pwd = $.trim($("#logoinForm input[name=upwd]").val());
+        if(!pwd){
+            toastr.error('密码不能为空!'); 
+        }
+        else{
+            return true;
+        }
+    }
+    function checkPwd2(){
+        var pwd = $.trim($("#logoinForm input[name=upwd]").val());
+        var pwd2 = $.trim($("#logoinForm input[name=upwd2]").val());
+        if(pwd !== pwd2){
+            toastr.error('两次输入密码不一致!');
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+    function isPoneAvailable() {
+            var str = $.trim($("#logoinForm input[name='phone']").val());
+            var myreg=/^[1][3,4,5,7,8][0-9]{9}$/;
+            if (!myreg.test(str)) {
+                toastr.error('请输入正确的手机号!');
+                return false;
+            } else {
+                return true;
+            }
+        }
+    function regFun(){
+       //toastr.info('Are you the 6 fingered man?')
+    //    if(checkUname()&&checkPwd()&&checkPwd2()){
+    //        var data=$("#logoinForm").serialize();
+           $.ajax({
+               url:'/index/Register/index',
+               type:'POST',
+            //    data:data,
+               success:function(data){
+                    //    if(data.code==200){
+                    //        toastr.info(data.msg);
+                    //        setTimeout(function(){
+                    //            location.href='/index/Main';
+                    //        },1000);  
+                          
+                    //    }
+                    //    else{
+                    //        toastr.error(data.msg);
+                    //    }                 
+               }
+           })
+    //    }
+  }
+</script>
+{include file="common/footer"}
