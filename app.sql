@@ -6,6 +6,7 @@ create table user(
     uid int primary key auto_increment,
     uname varchar(30),
     upwd varchar(32),
+    phone varchar(30),
     status int,
     time  int
 );

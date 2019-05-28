@@ -7,15 +7,13 @@ class Register extends Controller{
         //   return "注册";
         //判断用户是否存在
         if(request()->isPost()){
-            $row=db('user')->where('uname',input('uname'))->find();
-            if($row){
-                  return appResult(500,'用户名已存在！');
-            }          
+            // if(input('yzm')==)
             $data = [
                   "uname" => input('uname'),
                   "upwd" => md5(input('upwd')),
                   "time" => time()  
             ];
+            //将用户信息插入数据库
             $res=db('user')->insertGetId($data);
             if($res){
                 session('uid',$res);
@@ -27,6 +25,15 @@ class Register extends Controller{
             }
         }
         return  $this->fetch();
+    }
+    public function checkUnameisexist(){
+        $row=db('user')->where('uname',input('uname'))->find();
+        if($row){
+                return appResult(500,'用户名已存在！');
+        }  
+        else{
+                return appResult(200,'用户名可以使用！'); 
+        }   
     }
     public function send_dx($sms_mot='18710208346',$sms_id="SMS_151231129"){
             $appkey="23709438";
@@ -40,7 +47,10 @@ class Register extends Controller{
             $req->setExtend("");
             $req->setSmsType("normal");
             $req->setSmsFreeSignName("金米科技");
-            $sms_txt="{\"yzm\":\"12334\"}";
+            $num = rand(1000,9999);
+            //$sms_txt="{\"yzm\":\"12334\"}";
+            $sms_txt = "{\"yzm\":\"".$num."\"}";
+            session('yzm',$num); 
             $req->setSmsParam($sms_txt);
             //手机号
             $req->setRecNum($sms_mot);
@@ -49,4 +59,15 @@ class Register extends Controller{
             $resp = $c->execute($req); 
             var_dump($resp);
     }
+
+    //验证 图片码
+    public function CaptchaValidate(){
+           $token=input('token');
+           $phone=input('phone');
+           $result=CaptchaClient($token);
+           if($result->result){
+                $this->send_dx($phone,"SMS_151231129");
+           } 
+    }
+    
 }
