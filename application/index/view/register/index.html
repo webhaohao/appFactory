@@ -83,7 +83,7 @@
         })
         $("#regBtn").on('click',function(e){
                 e.preventDefault();
-                if(checkUname()&&checkPwd()){
+                if(!(checkUname()&&checkPwd()&&isPoneAvailable())){
                     return false;
                 }
                 regFun();
@@ -92,6 +92,7 @@
     })
     //用户名验证
     function checkUname(){
+        //debugger;
         var uname = $.trim($("#regForm input[name=uname]").val());
         if(!uname){
             toastr.error('用户不能为空!');
@@ -109,12 +110,13 @@
         var isexist = true;
         $.ajax({
             url:'/index/Register/checkUnameisexist',
+            async:false,
             data:{
                 uname :$("#regForm input[name=uname]").val()    
             },
             success:function(data){
                 if(data.code==200){
-                        toastr.info(data.msg);
+                        //toastr.info(data.msg);
                         isexist = false;
                 }
                 else{
@@ -129,23 +131,25 @@
         var pwd = $.trim($("#regForm input[name=upwd]").val());
         if(!pwd){
             toastr.error('密码不能为空!'); 
-        }
-        else{
-            return true;
-        }
-    }
-    function checkPwd2(){
-        var pwd = $.trim($("#regForm input[name=upwd]").val());
-        var pwd2 = $.trim($("#regForm input[name=upwd2]").val());
-        if(pwd !== pwd2){
-            toastr.error('两次输入密码不一致!');
             return false;
         }
         else{
             return true;
         }
     }
+    function checkPwd2(){
+            var pwd = $.trim($("#regForm input[name=upwd]").val());
+            var pwd2 = $.trim($("#regForm input[name=upwd2]").val());
+            if(pwd !== pwd2){
+                toastr.error('两次输入密码不一致!');
+                return false;
+            }
+            else{
+                return true;
+            }
+    }
     function isPoneAvailable() {
+            debugger;
             var str = $.trim($("#regForm input[name='phone']").val());
             var myreg=/^[1][3,4,5,7,8][0-9]{9}$/;
             if (!myreg.test(str)) {
@@ -154,29 +158,27 @@
             } else {
                 return true;
             }
-        }
+    }
     function regFun(){
        //toastr.info('Are you the 6 fingered man?')
-       if(checkUname()&&checkPwd()&&isPoneAvailable()){
            var data=$("#regForm").serialize();
            $.ajax({
                url:'/index/Register/index',
                type:'POST',
-            //    data:data,
+               data:data,
                success:function(data){
-                    //    if(data.code==200){
-                    //        toastr.info(data.msg);
-                    //        setTimeout(function(){
-                    //            location.href='/index/Main';
-                    //        },1000);  
+                       if(data.code==200){
+                           toastr.info(data.msg);
+                           setTimeout(function(){
+                               location.href='/index/Main';
+                           },1000);  
                           
-                    //    }
-                    //    else{
-                    //        toastr.error(data.msg);
-                    //    }                 
+                       }
+                       else{
+                           toastr.error(data.msg);
+                       }                 
                }
            })
-    //    }
     }
     function setRemainTime(){
         if (curCount == 0) {

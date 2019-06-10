@@ -17,7 +17,7 @@
         <form action="" method="post" id="loginForm">
                 <div class="form-group">
                     <label for="" class="iconfont icon-tel"></label>
-                    <input type="text" class="form-control input-lg" name="phone" placeholder="请输入手机号">
+                    <input type="text" class="form-control input-lg" name="uname" placeholder="请输入手机号">
                 </div>
                 <div class="form-group">
                     <label for="" class="iconfont icon-pwd"></label>
@@ -32,35 +32,30 @@
 </div>
 <script>
     $(function(){
-        $('#logoinForm input[name=uname]').blur(checkUname);
-        $('#logoinForm input[name=upwd]').blur(checkPwd);
-        $('#logoinForm input[name=phone]').blur(isPoneAvailable);
-        $("#logoinForm").on('click',function(e){
+        $('#loginForm input[name=uname]').blur(checkUname);
+        $('#loginForm input[name=upwd]').blur(checkPwd);
+        $("#loginForm button").on('click',function(e){
                 e.preventDefault();
-                if(checkUname()&&checkPwd()){
+                if(!(checkUname()&&checkPwd())){
                     return false;
                 }
-                regFun();
+                loginFun();
         })
        
     })
     //用户名验证
     function checkUname(){
-        var uname = $.trim($("#logoinForm input[name=uname]").val());
+        var uname = $.trim($("#loginForm input[name=uname]").val());
         if(!uname){
             toastr.error('用户不能为空!');
             return false;
-        }
-        else if(uname.length>10){
-            toastr.error('用户不能超过10位字符!');
-            return false;     
         }
         else{
             return true;
         }
     }
     function checkPwd(){
-        var pwd = $.trim($("#logoinForm input[name=upwd]").val());
+        var pwd = $.trim($("#loginForm input[name=upwd]").val());
         if(!pwd){
             toastr.error('密码不能为空!'); 
         }
@@ -68,19 +63,8 @@
             return true;
         }
     }
-    function checkPwd2(){
-        var pwd = $.trim($("#logoinForm input[name=upwd]").val());
-        var pwd2 = $.trim($("#logoinForm input[name=upwd2]").val());
-        if(pwd !== pwd2){
-            toastr.error('两次输入密码不一致!');
-            return false;
-        }
-        else{
-            return true;
-        }
-    }
     function isPoneAvailable() {
-            var str = $.trim($("#logoinForm input[name='phone']").val());
+            var str = $.trim($("#loginForm input[name='phone']").val());
             var myreg=/^[1][3,4,5,7,8][0-9]{9}$/;
             if (!myreg.test(str)) {
                 toastr.error('请输入正确的手机号!');
@@ -89,25 +73,25 @@
                 return true;
             }
         }
-    function regFun(){
+    function loginFun(){
        //toastr.info('Are you the 6 fingered man?')
     //    if(checkUname()&&checkPwd()&&checkPwd2()){
-    //        var data=$("#logoinForm").serialize();
+           var data=$("#loginForm").serialize();
            $.ajax({
-               url:'/index/Register/index',
+               url:'/index/Login/index',
                type:'POST',
-            //    data:data,
+               data:data,
                success:function(data){
-                    //    if(data.code==200){
-                    //        toastr.info(data.msg);
-                    //        setTimeout(function(){
-                    //            location.href='/index/Main';
-                    //        },1000);  
+                       if(data.code==200){
+                           toastr.info(data.msg);
+                           setTimeout(function(){
+                               location.href='/index/Main';
+                           },1000);  
                           
-                    //    }
-                    //    else{
-                    //        toastr.error(data.msg);
-                    //    }                 
+                       }
+                       else{
+                           toastr.error(data.msg);
+                       }                 
                }
            })
     //    }

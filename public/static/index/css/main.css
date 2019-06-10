@@ -125,7 +125,6 @@ a:visited,a:active,a:focus,a:visited,a:hover{
   width: auto;
   overflow: hidden;
   background-color: #fff;
-  z-index: 998;
 }
 .side-menu .menu-item a {
   color: #333;

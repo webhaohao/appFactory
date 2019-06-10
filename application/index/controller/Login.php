@@ -1,5 +1,5 @@
 <?php 
-namespace  app\index\controller;
+namespace app\index\controller;
 use think\Controller;
 
 class Login extends Controller{

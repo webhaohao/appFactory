@@ -7,21 +7,26 @@ class Register extends Controller{
         //   return "注册";
         //判断用户是否存在
         if(request()->isPost()){
-            // if(input('yzm')==)
-            $data = [
-                  "uname" => input('uname'),
-                  "upwd" => md5(input('upwd')),
-                  "time" => time()  
-            ];
-            //将用户信息插入数据库
-            $res=db('user')->insertGetId($data);
-            if($res){
-                session('uid',$res);
-                session('uname',$data['uname']);
-                return appResult(200,'注册成功！');
+            if(input('yzm')==session('yzm')){
+                    $data = [
+                        "uname" => input('uname'),
+                        "upwd" => md5(input('upwd')),
+                        'phone'=>input('phone'),
+                        "time" => time()  
+                    ];
+                    //将用户信息插入数据库
+                    $res=db('user')->insertGetId($data);
+                    if($res){
+                        session('uid',$res);
+                        session('uname',$data['uname']);
+                        return appResult(200,'注册成功！');
+                    }
+                    else{
+                        return appResult(500,'注册失败！');
+                    }
             }
             else{
-                return appResult(500,'注册失败！');
+                 return appResult(500,'验证码错误！');
             }
         }
         return  $this->fetch();

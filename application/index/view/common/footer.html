@@ -99,23 +99,6 @@
 //            })
 //        }
 //   }
-  function loginFun(){
-      var data=$("#loginForm").serialize();
-      $.ajax({
-          url:'/index/index/login',
-          type:'POST',
-          data:data,
-          success:function(data){
-               if(data.code==200){
-                       //toastr.info(data.msg);
-                       location.href='/index/Main';
-               }
-               else{
-                       toastr.error(data.msg);
-               }
-          }
-      })
-  }
 </script>
 </body>
 </html>
