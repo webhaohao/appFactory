@@ -1,0 +1,81 @@
+{include file="common/header"}
+<div class="login-common">
+        <div class="tit">找回密码</div>
+        <form action="" method="post">
+            <div class="form-group">
+                <label for="" class="iconfont icon-tel"></label>
+                <input type="text" class="form-control input-lg" name="phone" placeholder="请输入手机号">
+            </div>
+            <div class="form-group">
+                <label for="" class="iconfont icon-email"></label>
+                <div class="clearfix verification-code">
+                    <input type="text" class="form-control input-lg fl" name="yzm" placeholder="请输入短信验证码">
+                    <input type="button" class="ms-btn ms-btn-primary input-lg fr" id="sendmsg" value="获取验证码">
+                </div>
+            </div>
+            <!---滑动验证-->
+            <div id="c1"></div>   
+            <button class="ms-btn ms-btn-primary input-lg mt20">修改密码</button>
+        </form>
+</div>
+<script src="https://cdn.dingxiang-inc.com/ctu-group/captcha-ui/index.js"></script>
+<script>
+    $(function(){
+          var myCaptcha = _dx.Captcha(document.getElementById('c1'), {
+                appId: '5bacef1c9ca0571299a4c4bb62a4a31d', //appId，在控制台中“应用管理”或“应用配置”模块获取
+                style:'popup',
+                success: function (token) {
+                    $.ajax({
+                        url:'/index/Findpwd/CaptchaValidate',
+                        data:{
+                            token:token,
+                            phone:$('input[name=phone]').val()
+                        },
+                        success:function(data){
+                            myCaptcha.hide(); 
+                            curCount = count;
+                            //设置button效果，开始计时
+                            $("#sendmsg").css("background-color", "");
+                            $("#sendmsg").attr("disabled", "true");
+                            $("#sendmsg").val(curCount + "秒");    
+                            InterValObj = window.setInterval(setRemainTime,1000);
+                        }   
+                    })
+                    //console.log('token:', token)
+                }
+            })  
+          //获取手机验证码
+          $("#sendmsg").on('click',function(e){
+                  e.preventDefault();
+                  if(isPoneAvailable()){
+                          myCaptcha.show(); 
+                  }
+                  
+          })  
+    })
+    function isPoneAvailable() {
+            debugger;
+            var str = $.trim($("input[name='phone']").val());
+            var myreg=/^[1][3,4,5,7,8][0-9]{9}$/;
+            if (!myreg.test(str)) {
+                toastr.error('请输入正确的手机号!');
+                return false;
+            } else {
+                return true;
+            }
+    } 
+    function setRemainTime(){
+        if (curCount == 0) {
+            window.clearInterval(InterValObj);//停止计时器
+            $("#sendmsg").removeAttr("disabled");//启用按钮
+            $("#sendmsg").css("background-color", "");
+            $("#sendmsg").val("获取验证码");
+            code = ""; //清除验证码。如果不清除，过时间后，输入收到的验证码依然有效
+        }
+        else {
+            curCount--;
+            $("#sendmsg").val(curCount + "秒");
+        }
+    } 
+</script>
+{include file="common/footer"}

@@ -19,6 +19,7 @@ class Register extends Controller{
                     if($res){
                         session('uid',$res);
                         session('uname',$data['uname']);
+                        session('yzm',null);
                         return appResult(200,'注册成功！');
                     }
                     else{
