@@ -1,7 +1,7 @@
 {include file="common/header"}
 <div class="login-common">
         <div class="tit">找回密码</div>
-        <form action="" method="post">
+        <form action="" method="post" id="findpwdForm">
             <div class="form-group">
                 <label for="" class="iconfont icon-tel"></label>
                 <input type="text" class="form-control input-lg" name="phone" placeholder="请输入手机号">
@@ -19,7 +19,11 @@
         </form>
 </div>
 <script src="https://cdn.dingxiang-inc.com/ctu-group/captcha-ui/index.js"></script>
-<script>
+<script>    
+    var InterValObj;
+    var count = 60;
+    var curCount;
+    var code ="";
     $(function(){
           var myCaptcha = _dx.Captcha(document.getElementById('c1'), {
                 appId: '5bacef1c9ca0571299a4c4bb62a4a31d', //appId，在控制台中“应用管理”或“应用配置”模块获取
@@ -52,6 +56,27 @@
                   }
                   
           })  
+          //修改密码按钮
+          $("#findpwdForm button").on('click',function(e){
+                e.preventDefault();
+                $.ajax({
+                    url:'/index/Findpwd/index',
+                    type:'POST',
+                    data:{
+                        yzm:$('input[name=yzm]').val(),
+                        phone:$('input[name=phone]').val()
+                    },
+                    success:function(data){
+                          console.log(data);
+                          if(data.code=="200"){
+                                location.href="/index/Resetpwd/index?uid="+data.data.uid
+                          }
+                          else{
+                                toastr.error(data.msg);
+                          }
+                    }  
+                })
+          })
     })
     function isPoneAvailable() {
             debugger;

@@ -1,0 +1,52 @@
+{include file="common/header"}
+<div class="login-common">
+        <div class="tit">重置密码</div>
+        <form action="" method="post" id="resetForm">
+            <div class="form-group">
+                <label for="" class="iconfont icon-pwd"></label>
+                <input type="password" class="form-control input-lg" name="pwd" placeholder="请输入密码">
+            </div>
+            <div class="form-group">
+                <label for="" class="iconfont icon-pwd"></label>
+                <input type="password" id="repwd" class="form-control input-lg" name="repwd" placeholder="请再次输入密码">
+            </div>
+            <input type="hidden" name="userid" value="{$Think.get.uid}">
+            <!---滑动验证-->
+            <div id="c1"></div>   
+            <button class="ms-btn ms-btn-primary input-lg mt20">修改密码</button>
+        </form>
+</div>
+<script> 
+       $(function(){
+           $("#resetForm button").click(function(e){
+                    e.preventDefault();
+                    if($.trim($('input[name=pwd]').val())==$.trim($('input[name=repwd]').val())){
+                            $.ajax({
+                                url:'/index/Resetpwd/index',
+                                type:'POST',
+                                data:{
+                                    uid:$('input[name=userid]').val(),
+                                    pwd:$('input[name=pwd]').val(),
+                                    repwd:$('input[name=repwd]').val()
+                                },
+                                success:function(data){
+                                    console.log(data);   
+                                    if(data.code==200){
+                                        toastr.info(data.msg);
+                                        setTimeout(function(){
+                                                location.href='/index/login/index'
+                                        },1000)
+                                    }
+                                    else{
+                                        toastr.error(data.msg);
+                                    }
+                                }
+                            })
+                    }
+                    else{
+                            toastr.error('两次输入密码不一致'); 
+                    }
+           })       
+       }) 
+</script>
+{include file="common/footer"}

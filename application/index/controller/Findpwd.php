@@ -1,8 +1,26 @@
 <?php 
 namespace app\index\controller;
 use think\Controller;
+
+use think\Loader;
 class Findpwd extends Controller{
       public function index(){
+          if(request()->isPost()){
+                if(input('yzm')==session('yzm')){
+                    session('yzm',null);
+                    $res = db('user')->where('phone',input('phone'))->find();
+                    if($res){
+                        return  appResult(200,'验证成功',$res);
+                    }
+                    else{
+                        return  appResult(500,'手机号未绑定用户！');
+                    }
+                   
+                }
+                else{
+                    return appResult(500,'验证码错误！');
+                }
+          }
           return $this->fetch();
       }
       public function send_dx($sms_mot='18710208346',$sms_id="SMS_151231129"){

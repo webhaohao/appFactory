@@ -67,6 +67,7 @@
 <script>
 				$(".layout-side .side-menu li a").click(function(e){
 								e.preventDefault();
+								$(this).parent().addClass('active').siblings().removeClass('active');
 								$(".body-iframe").attr('src',$(this).attr('href'));
 				})
 </script>
