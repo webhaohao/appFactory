@@ -261,7 +261,21 @@ function  appResult($code,$msg,$data=''){
             'data' => $data
        ]); 
 }
-
+function unescape($str) { //这个是解密用的
+    $str = rawurldecode($str); 
+    preg_match_all("/%u.{4}|&#x.{4};|&#d+;|.+/U",$str,$r); 
+    $ar = $r[0]; 
+    foreach($ar as $k=>$v) { 
+             if(substr($v,0,2) == "%u") 
+                      $ar[$k] = iconv("UCS-2","GBK",pack("H4",substr($v,-4))); 
+             elseif(substr($v,0,3) == "&#x") 
+                      $ar[$k] = iconv("UCS-2","GBK",pack("H4",substr($v,3,-1))); 
+             elseif(substr($v,0,2) == "&#") { 
+                      $ar[$k] = iconv("UCS-2","GBK",pack("n",substr($v,2,-1))); 
+             } 
+    } 
+    return join("",$ar); 
+}
 /**
  +------------------------------------------------------
  *    PHP 汉字转拼音
@@ -847,4 +861,104 @@ class Pinyin {
     }
 }
 
+//短信验证验证次数
+class validateCount{
+    protected $Root = null;
+    public function __construct()
+    {
+        $this->Root = APP_PATH."/data/msg_logs";        
+    }
+    public function get_authentication_code($phone,$uv_r){
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $uvr_num = $this -> checkUvr($uv_r);
+        $tel_num = $this -> checkTel($phone);
+        $ip_num = $this -> checkIp($ip);
+        if($uvr_num < 10 && $tel_num<4 && $ip_num<10){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    //以下方法为私有方法
+  //检测ur_r在文件中出现的次数
+  private function checkUvr($data){
+      $fileName = "Uv_".date("Ymd",time()).".dat";
+      $filePath = ($this -> Root).$fileName;//组装要写入的文件的路径
+      $c_sum = 0;
+      if(file_exists($filePath)){//文件存在获取次数并将此次请求的数据写入
+          $arr=file_get_contents($filePath);
+          $row=explode("|",$arr);
+          $countArr=array_count_values($row);
+          $c_sum = $countArr[$data];
+          if($c_sum<10)
+          {
+              $this -> wirteFile($filePath,$data."|");
+          }
+          return $c_sum;
+      }else{//文件不存在创建文件并写入本次数据，返回次数0
+          $this -> wirteFile($filePath,$data."|");
+          return $c_sum;
+      }
+  }
+  //检测Tel在文件中出现的次数
+  private function checkTel($data){
+      $fileName = "Tel_".date("Ymd",time()).".dat";
+      $filePath = ($this -> Root).$fileName;
+      $c_sum = 0;
+      if(file_exists($filePath)){
+          $arr=file_get_contents($filePath);
+          $row=explode("|",$arr);
+          $countArr=array_count_values($row);
+          $c_sum = $countArr[$data];
+          if($c_sum<4)
+          {
+              $this -> wirteFile($filePath,$data."|");
+          }
+          return $c_sum;
+      }else{
+          $this -> wirteFile($filePath,$data."|");
+          return $c_sum;
+      }
+  }
+  //检测IP在文件中存在的次数
+  private function checkIp($data){
+      $fileName = "Ip_".date("Ymd",time()).".dat";
+      $filePath = ($this -> Root).$fileName;
+      $c_sum = 0;
+      if(file_exists($filePath)){
+          $arr=file_get_contents($filePath);
+          $row=explode("|",$arr);
+          $countArr=array_count_values($row);
+          $c_sum = $countArr[$data];
+          if($c_sum<10)
+          {
+              $this -> wirteFile($filePath,$data."|");
+          }
+          return $c_sum;
+      }else{
+         $this -> wirteFile($filePath,$data."|");
+         return $c_sum;
+     }
+ }
+ /**
+ * 将数据写入本地文件
+ * @param $filePath 要写入文件的路径
+ * @param $data 写入的数据
+ */
+private function wirteFile($filePath,$data){
+        try {
+                if(!is_dir($this->Root)){//判断文件所在目录是否存在，不存在就创建
+                    mkdir($this->Root, 0777, true);
+                }
+                if($filePath==""){//此处是不发送验证码时，记录日志创建的文件
+                    $filePath = ($this -> Root)."N".date("Ymd",time()).".dat";
+                }
+        //写入文件操作
+                $fp=fopen($filePath,"a+");//得到指针
+                fwrite($fp,$data);//写
+                fclose($fp);//关闭
+            } catch (Exception $e) { print $e->getMessage();    }
+        }
+}
 

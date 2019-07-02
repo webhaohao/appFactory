@@ -4,14 +4,15 @@ use think\Controller;
 use think\Loader;
 class Register extends Controller{
     public function  index(){
+        $captcha = new \think\captcha\Captcha();
         //   return "注册";
         //判断用户是否存在
         if(request()->isPost()){
-            if(input('yzm')==session('yzm')){
+            if($captcha->check(input('code'))){
                     $data = [
                         "uname" => input('uname'),
                         "upwd" => md5(input('upwd')),
-                        'phone'=>input('phone'),
+                        //'phone'=>input('phone'),
                         "time" => time()  
                     ];
                     //将用户信息插入数据库
@@ -19,7 +20,7 @@ class Register extends Controller{
                     if($res){
                         session('uid',$res);
                         session('uname',$data['uname']);
-                        session('yzm',null);
+                        // session('yzm',null);
                         return appResult(200,'注册成功！');
                     }
                     else{
@@ -68,10 +69,15 @@ class Register extends Controller{
 
     //验证 图片码
     public function CaptchaValidate(){
-           $token=input('token');
+           //$token=input('token');
            $phone=input('phone');
-           $result=CaptchaClient($token);
-           if($result->result){
+           $uuid_c=cookie('_UUID_UV');
+           $uv_r = base64_decode(input('uv_r'));
+           $validateCount =new \validateCount();  
+           $result = $validateCount->get_authentication_code($phone,$uv_r); 
+           //$result=CaptchaClient($token);
+           //检测手机号 js cookie 是否相同  是否超过限定次数
+           if($phone && ($uuid_c == $uv_r) && $result){
                 $this->send_dx($phone,"SMS_151231129");
            } 
     }

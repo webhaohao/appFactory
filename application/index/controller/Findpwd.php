@@ -50,11 +50,15 @@ class Findpwd extends Controller{
 
     //验证 图片码
     public function CaptchaValidate(){
-        $token=input('token');
         $phone=input('phone');
-        $result=CaptchaClient($token);
-        if($result->result){
-                $this->send_dx($phone,"SMS_151231129");
+        $uuid_c=cookie('_UUID_UV');
+        $uv_r = base64_decode(input('uv_r'));
+        $validateCount =new \validateCount();  
+        $result = $validateCount->get_authentication_code($phone,$uv_r); 
+        //$result=CaptchaClient($token);
+        //检测手机号 js cookie 是否相同  是否超过限定次数
+        if($phone && ($uuid_c == $uv_r) && $result){
+             $this->send_dx($phone,"SMS_151231129");
         } 
     }
 }

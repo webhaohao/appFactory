@@ -13,6 +13,7 @@
                     <input type="button" class="ms-btn ms-btn-primary input-lg fr" id="sendmsg" value="获取验证码">
                 </div>
             </div>
+            <input type="hidden" name="uv_r" value="">
             <!---滑动验证-->
             <div id="c1"></div>   
             <button class="ms-btn ms-btn-primary input-lg mt20">修改密码</button>
@@ -25,18 +26,49 @@
     var curCount;
     var code ="";
     $(function(){
-          var myCaptcha = _dx.Captcha(document.getElementById('c1'), {
-                appId: '5bacef1c9ca0571299a4c4bb62a4a31d', //appId，在控制台中“应用管理”或“应用配置”模块获取
-                style:'popup',
-                success: function (token) {
+        //   var myCaptcha = _dx.Captcha(document.getElementById('c1'), {
+        //         appId: '5bacef1c9ca0571299a4c4bb62a4a31d', //appId，在控制台中“应用管理”或“应用配置”模块获取
+        //         style:'popup',
+        //         success: function (token) {
+        //             $.ajax({
+        //                 url:'/index/Findpwd/CaptchaValidate',
+        //                 data:{
+        //                     token:token,
+        //                     phone:$('input[name=phone]').val()
+        //                 },
+        //                 success:function(data){
+        //                     myCaptcha.hide(); 
+        //                     curCount = count;
+        //                     //设置button效果，开始计时
+        //                     $("#sendmsg").css("background-color", "");
+        //                     $("#sendmsg").attr("disabled", "true");
+        //                     $("#sendmsg").val(curCount + "秒");    
+        //                     InterValObj = window.setInterval(setRemainTime,1000);
+        //                 }   
+        //             })
+        //             //console.log('token:', token)
+        //         }
+        //     })  
+            var _uuid = getUUID();
+            if(getCookie("_UUID_UV")!=null && getCookie("_UUID_UV")!=undefined)
+            {
+                _uuid = getCookie("_UUID_UV");
+            }else{
+                setCookie("_UUID_UV",_uuid);
+            }
+            $("#findpwdForm input[name=uv_r]").val(_uuid);
+          //获取手机验证码
+          $("#sendmsg").on('click',function(e){
+                  e.preventDefault();
+                  if(isPoneAvailable()){
                     $.ajax({
                         url:'/index/Findpwd/CaptchaValidate',
                         data:{
-                            token:token,
+                            uv_r:base64encode($('#findpwdForm input[name=uv_r]').val()),
                             phone:$('input[name=phone]').val()
                         },
                         success:function(data){
-                            myCaptcha.hide(); 
+                            //myCaptcha.hide(); 
                             curCount = count;
                             //设置button效果，开始计时
                             $("#sendmsg").css("background-color", "");
@@ -45,14 +77,6 @@
                             InterValObj = window.setInterval(setRemainTime,1000);
                         }   
                     })
-                    //console.log('token:', token)
-                }
-            })  
-          //获取手机验证码
-          $("#sendmsg").on('click',function(e){
-                  e.preventDefault();
-                  if(isPoneAvailable()){
-                          myCaptcha.show(); 
                   }
                   
           })  
