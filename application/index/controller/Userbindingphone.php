@@ -1,5 +1,6 @@
 <?php 
   namespace app\index\controller;
+  use think\Loader;
   use app\index\controller\Base;
   class Userbindingphone extends Base{
         public function index(){
